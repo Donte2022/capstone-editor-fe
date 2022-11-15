@@ -2,6 +2,7 @@ import {Component,OnInit} from '@angular/core';
 import {HttpService} from "../http.service";
 import {first} from "rxjs";
 import {IProcess} from "../interfaces/IProcess";
+import {ProcessService} from "../process.service";
 
 @Component({
   selector: 'app-process-display',
@@ -13,7 +14,8 @@ export class ProcessDisplayComponent implements OnInit {
   // @Input() process!: IProcess;
   latestProcessList!: IProcess[];
 
-  constructor(private httpService: HttpService) {
+  constructor(private httpService: HttpService,
+              private processService: ProcessService) {
 
     this.httpService.getTitles()
         .pipe(first()).subscribe({
@@ -32,12 +34,16 @@ export class ProcessDisplayComponent implements OnInit {
   ngOnInit(): void {
   }
 
-    Edit() {
+    Edit(updateThisStage: IProcess) {
         console.log("editing")
+      console.log(updateThisStage)
+      this.processService.updateStage(updateThisStage);
     }
 
-  Delete() {
+  Delete(iD: number) {
     console.log("deleting")
+    console.log(iD)
+    this.processService.deleteStage(iD);
   }
 
   Results() {
