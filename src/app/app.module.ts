@@ -4,15 +4,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { ProcessComponent } from './process/process.component';
+import { HubComponent } from './hub/hub.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProcessComponent,
+    HubComponent
   ],
   imports: [
     BrowserModule,
       FormsModule,
-      HttpClientModule
+      HttpClientModule,
+      NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
