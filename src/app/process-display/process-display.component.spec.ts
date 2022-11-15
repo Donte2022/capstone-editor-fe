@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HubComponent } from './hub.component';
+import { ProcessDisplayComponent } from './process-display.component';
 
-describe('HubComponent', () => {
-  let component: HubComponent;
-  let fixture: ComponentFixture<HubComponent>;
+describe('ProcessDisplayComponent', () => {
+  let component: ProcessDisplayComponent;
+  let fixture: ComponentFixture<ProcessDisplayComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HubComponent ]
+      declarations: [ ProcessDisplayComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HubComponent);
+    fixture = TestBed.createComponent(ProcessDisplayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

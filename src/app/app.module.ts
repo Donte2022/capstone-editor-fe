@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { ProcessComponent } from './process/process.component';
-import { HubComponent } from './hub/hub.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProcessDisplayComponent } from './process-display/process-display.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProcessComponent,
-    HubComponent
+    ProcessDisplayComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
