@@ -7,13 +7,21 @@ import { ProcessComponent } from './process/process.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProcessDisplayComponent } from './process-display/process-display.component';
 import { MainComponent } from './main/main.component';
+import { TitleComponent } from './title/title.component';
+import { SummaryComponent } from './summary/summary.component';
+import { ResultsComponent } from './results/results.component';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProcessComponent,
     ProcessDisplayComponent,
-    MainComponent
+    MainComponent,
+    TitleComponent,
+    SummaryComponent,
+    ResultsComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

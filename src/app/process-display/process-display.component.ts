@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {IProcess} from "../interfaces/IProcess";
 
 @Component({
   selector: 'app-process-display',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./process-display.component.css']
 })
 export class ProcessDisplayComponent implements OnInit {
+
+  @Input() process!: IProcess;
 
   constructor() { }
 
