@@ -11,7 +11,7 @@ export class AppComponent {
   isCreatingStage: boolean = false;
   isCreatingTitle: boolean = false;
   isCreatingProcess: boolean = false;
-  isViewingMain: boolean = false;
-  isUpdating: boolean = true;
+  isViewingMain: boolean = true;
+  isUpdating: boolean = false;
 }
 

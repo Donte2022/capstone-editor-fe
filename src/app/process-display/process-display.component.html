@@ -1,11 +1,20 @@
 <p>process-display works!</p>
-<div>Date Created: </div>
-<!--{{stage.dateCreated}}-->
-<div>Stage Title: </div>
-<!--{{stage.processTitle}}-->
 
-<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+<div *ngFor="let displayInfo of latestProcessList">
+
+    <div><b> Id: </b></div>
+{{displayInfo.id}}
+    <div><b>Date Created: </b> </div>
+{{displayInfo.date | date}}
+    <div><b> Stage Title: </b></div>
+{{displayInfo.title}}
+    <div><b> Prompt:</b></div>
+{{displayInfo.prompt}}
+
+<!--<div class="d-grid gap-2 d-md-flex justify-content-md-center">-->
+<div>
     <button (click)="Edit()" class="btn btn-success">Edit</button>
     <button (click)="Delete()" class="btn btn-danger" type="button">Delete</button>
     <button (click)="Results()" class="btn btn-primary" type="button">Results</button>
+</div>
 </div>
