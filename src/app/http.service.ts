@@ -18,13 +18,13 @@ export class HttpService {
     ) as Observable<IProcess>;
   }
 
-  // createStage() {
-  //   return this.httpClient.post(
-  //       "http://localhost:8080/api/processes",
-  //       IProcess
-  //   ) as Observable<IProcess>;
-  //
-  // }
+  createNewTitle(title: IProcess) {
+    return this.httpClient.post(
+        "http://localhost:8080/api/processes",
+        title
+    ) as Observable<IProcess>;
+
+  }
 
   deleteSelectedStage(iD:number) {
     return this.httpClient.delete(
@@ -44,5 +44,9 @@ export class HttpService {
     ) as Observable<IProcess>;
 
   }
+
+    // createNewTitle(title: ITitle) {
+    //
+    // }
 }
 

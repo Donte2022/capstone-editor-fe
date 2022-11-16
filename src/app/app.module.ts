@@ -11,6 +11,7 @@ import { TitleComponent } from './title/title.component';
 import { SummaryComponent } from './summary/summary.component';
 import { ResultsComponent } from './results/results.component';
 import { UpdateComponent } from './update/update.component';
+import { NewStageComponent } from './new-stage/new-stage.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UpdateComponent } from './update/update.component';
     TitleComponent,
     SummaryComponent,
     ResultsComponent,
-    UpdateComponent
+    UpdateComponent,
+    NewStageComponent
   ],
   imports: [
     BrowserModule,

@@ -60,4 +60,37 @@ export class ProcessService {
     })
 
   }
+
+  newTitle(newStage: IProcess) {
+
+    // if (newStage.title.length <1) {
+    //   console.log ("Field is empty");
+    // }
+
+    if (newStage.title.length > 1)
+    {
+      const stage: IProcess = {
+
+        iD: newStage.iD,
+        date: newStage.date,
+        title: newStage.title,
+        prompt: newStage.prompt,
+      }
+
+      this.httpService.createNewTitle(stage).subscribe({
+      next: (stage) => {
+
+        console.log("title Created")
+        console.log(stage)
+      },
+        error: (error) => {
+
+        console.log("title fail to create!")
+          console.log(error)
+        },
+      });
+    }
+    return true;
+
+  }
 }

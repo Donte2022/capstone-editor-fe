@@ -8,6 +8,11 @@ import {ProcessService} from "../process.service";
 })
 export class ProcessComponent implements OnInit {
 
+
+
+    public people  =  [{}
+    ];
+
   constructor(private processService: ProcessService) { }
 
   ngOnInit(): void {
@@ -31,5 +36,35 @@ export class ProcessComponent implements OnInit {
     this.processService.$isCreatingStage.next(false);
     this.processService.$isCreatingTitle.next(false);
 
+  }
+
+  addInput() {
+    let row = document.createElement('div');
+    row.className = 'row';
+    row.innerHTML = `
+    <br>
+    <input type="text">`;
+    // @ts-ignore
+    document.querySelector('.showInputField').appendChild(row);
+  }
+
+  addRadio() {
+    let row = document.createElement('div');
+    row.className = 'row';
+    row.innerHTML = `
+    <br>
+    <input type="radio">`;
+    // @ts-ignore
+    document.querySelector('.showRadioField').appendChild(row);
+  }
+
+  addTextarea() {
+    let row = document.createElement('div');
+    row.className = 'row';
+    row.innerHTML = `
+    <br>
+    <textarea>`;
+    // @ts-ignore
+    document.querySelector('.showTextareaField').appendChild(row);
   }
 }

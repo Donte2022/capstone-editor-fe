@@ -2,12 +2,28 @@
 <div class="position-absolute top-50 start-50 translate-middle">
     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
         <h3>Create a Title</h3>
-        <form #login="ngForm">
+        <form #newStage="ngForm" (ngSubmit)="stageTitle(newStage)">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Process Title: </span>
-                <input ngModel name="Process" class="form-control" aria-label="Process">
+                <input ngModel name="title" class="form-control" aria-label="title">
             </div>
-        </form>
-        <button (click)="generateStage()">Create Stage</button>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2">Start Date: </span>
+                <input type="date" ngModel name="startDate" class="form-control" aria-label="startDate">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3">End Date: </span>
+                <input type="date" ngModel name="endDate" class="form-control" aria-label="endDate">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon4">Description: </span>
+                <input type="textarea" ngModel name="description" class="form-control" aria-label="description">
+            </div>
+            <button type="submit" stageTitle>Create Title</button>
+
+    </form>
+        <button  (click)="generateStage()">Add Process</button>
+        <button (click)="cancel()">Cancel</button>
+
     </div>
 </div>

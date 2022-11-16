@@ -18,16 +18,45 @@
                 <input ngModel name="Prompt" class="form-control" aria-label="Prompt" type="text">
             </div>
             <br>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon2">Response: </span>
-                <input ngModel name="Response" class="form-control" aria-label="Response" type="text">
-            </div>
-            <br>
+<!--            <div class="input-group mb-3">-->
+<!--                <span class="input-group-text" id="basic-addon2"> Select type: </span>-->
+<!--&lt;!&ndash;                <input ngModel name="Response" class="form-control" aria-label="Response" type="text">&ndash;&gt;-->
+<!--&lt;!&ndash;                <input type="radio"> Radio button&ndash;&gt;-->
+<!--&lt;!&ndash;                <input type="input"> Input Field&ndash;&gt;-->
+<!--&lt;!&ndash;                <input type="checkbox"> Checkbox&ndash;&gt;-->
+<!--&lt;!&ndash;                <textarea></textarea> Textarea&ndash;&gt;-->
+<!--            </div>-->
+            <div>
+                <span class="input-group-text" id="basic-addon3"> Select type: </span>
+<!--                <select  name="selected_type" class="form-control">-->
+<!--                    <option value=""> Radio Btn </option>-->
+<!--                    <option name="Input">Input</option>-->
+<!--                    <option name="textarea">Textarea</option>-->
+<!--                </select>-->
+                <br>
+                <div class="showRadioField" ng-hide="radioBtn" name="radioBtn">
+                <button (click)="addRadio()">Add Radio</button>
+                </div>
+                <div class="showInputField" ng-hide="radioBtn" name="inputField">
+<!--                        <input type="radio">-->
+                    <button (click)="addInput()">Add Input</button>
+                </div>
 
+
+
+                <div class="showTextareaField" ng-hide="radioBtn" name="inputField">
+                    <button (click)="addTextarea()">Add Textarea</button>
+
+                </div>
+
+            </div>
+
+
+            <br>
         </form>
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-        <button (click)="CreateProcess()" class="btn btn-success">Back</button>
+<!--        <button (click)="CreateProcess()" class="btn btn-success">Back</button>-->
         <button (click)="Cancel()" class="btn btn-danger" type="button">Cancel</button>
         <button (click)="CreatePrompt()" class="btn btn-primary" type="button">Create new prompt</button>
     </div>
