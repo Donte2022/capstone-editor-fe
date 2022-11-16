@@ -1,7 +1,7 @@
 
 <div class="position-absolute top-50 start-50 translate-middle">
     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-        <h3>Create a Title</h3>
+        <h3>Title</h3>
         <form #newStage="ngForm" (ngSubmit)="stageTitle(newStage)">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Process Title: </span>
@@ -22,7 +22,7 @@
             <button type="submit" stageTitle>Save</button>
 
     </form>
-        <button  (click)="generateStage(newStage.value)">Add Process</button>
+        <button (click)="generateStage(newStage.value)">Add Process</button>
         <button (click)="cancel()">Cancel</button>
 
     </div>

@@ -40,10 +40,10 @@ export class ProcessDisplayComponent implements OnInit {
     //   this.processService.updateStage(updateThisStage);
     // }
 
-  Delete(iD: number) {
+  Delete(id: number) {
     console.log("deleting")
-    console.log(iD)
-    this.processService.deleteStage(iD);
+    console.log(id)
+    this.processService.deleteStage(id);
   }
 
   Results() {
@@ -54,6 +54,28 @@ export class ProcessDisplayComponent implements OnInit {
     this.processService.$isCreatingStage.next(false);
     this.processService.$isCreatingTitle.next(false);
     this.processService.$isReviewing.next(true);
+
+  }
+
+  addProcess() {
+    console.log("adding process")
+    this.processService.$isCreatingProcess.next(true);
+    this.processService.$isUpdating.next(false);
+    this.processService.$isViewingMain.next(false);
+    this.processService.$isCreatingStage.next(false);
+    this.processService.$isCreatingTitle.next(false);
+  }
+
+  editStage(displayInfo: ITitle) {
+    this.processService.$isCreatingProcess.next(false);
+    this.processService.$isUpdating.next(false);
+    this.processService.$isViewingMain.next(false);
+    this.processService.$isCreatingStage.next(false);
+    this.processService.$isCreatingTitle.next(false);
+    this.processService.$isUpdating.next(true);
+    // @ts-ignore
+    this.processService.updateThisStage(displayInfo);
+    console.log(displayInfo)
 
   }
 }

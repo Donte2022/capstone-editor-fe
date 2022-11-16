@@ -18,3 +18,7 @@
 <div *ngIf = "!isCreatingStage && !isCreatingTitle && !isViewingMain &&!isCreatingProcess && !isUpdating && isReviewing">
     <app-results></app-results>
 </div>
+
+<div *ngIf = "!isCreatingStage && !isCreatingTitle && !isViewingMain &&!isCreatingProcess && !isReviewing && isUpdating">
+    <app-update></app-update>
+</div>

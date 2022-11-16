@@ -1,1 +1,45 @@
-<p>update works!</p>
+<h3>Update Stage</h3>
+
+
+<div class="position-absolute top-50 start-50 translate-middle">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <h3>Title</h3>
+<!--        <ngb-panel *ngFor="let stageData of updatedStage">-->
+<!--            <ng-template>-->
+<!--            {{stageData.id}}-->
+<!--            {{stageData.title}}-->
+<!--            {{stageData.startDate}}-->
+<!--            </ng-template>-->
+<!--        </ngb-panel>-->
+<!--    <div *ngFor="let stageData of updatedStage">   </div>-->
+        <form #updatedStageData="ngForm" (ngSubmit)="submitUpdateStage(updatedStageData.value)">
+
+            <div class="input-group mb-0">
+                <input id="eventId" name="id" [ngModel]="this.updatedStage.id" type="hidden" class="form-control">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Process Title: </span>
+                <input [ngModel]="this.updatedStage.title" id="name" name="title" class="form-control"  aria-label="title">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2">Start Date: </span>
+                <input type="date" [ngModel]="this.updatedStage.startDate"  name="startDate" class="form-control" aria-label="startDate">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3">End Date: </span>
+                <input type="date" [ngModel]="this.updatedStage.endDate" name="endDate" class="form-control" aria-label="endDate">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon4">Description: </span>
+                <input type="textarea" [ngModel]="this.updatedStage.description" name="description" class="form-control" aria-label="description">
+            </div>
+            <button type="submit" stageTitle>Save</button>
+
+        </form>
+
+        <!--        <button (click)="addProcess(newStage.value)">Add Process</button>-->
+        <button (click)="cancel()">Cancel</button>
+
+    </div>
+</div>

@@ -25,6 +25,25 @@ export class ProcessService {
   $isUpdating = new BehaviorSubject<boolean>(false);
   $isReviewing = new BehaviorSubject<boolean>(false);
 
+   public updatedStageData: BehaviorSubject<ITitle[]> = new BehaviorSubject<ITitle[]>([]);
+  //      [{
+  //   id: this.updatedStageData.id;
+  //   title: title;
+  //   startDate: Date;
+  //   endDate: Date;
+  //   description:;
+  // }];
+
+   newStage: string = "";
+
+  // $oldTitle = new BehaviorSubject<ITitle[]>([]);
+
+  updateThisStage(displayInfo: any) {
+    console.log(displayInfo)
+    this.newStage = displayInfo;
+
+  }
+
   constructor(private httpService: HttpService) {
   }
 
@@ -32,12 +51,18 @@ export class ProcessService {
     this.httpService.getTitles()
   }
 
-  deleteStage(iD: number) {
+  // updateThisStage() {
+  //   this.updatedStageData = stageInfo;
+  //   this.$oldTitle = this.updatedStageData;
+  // }
 
-    this.httpService.deleteSelectedStage(iD)
+
+  deleteStage(id: number) {
+
+    this.httpService.deleteSelectedStage(id)
         .pipe(first()).subscribe({
       next: (deleteThisStageSuccess) => {
-        console.log(iD)
+        console.log(id)
         this.$deleteThisStageSuccess.next(this.deleteIdSuccess)
       },
       error: (deleteThisStageError) => {
@@ -47,20 +72,20 @@ export class ProcessService {
     })
   }
 
-  // updateStage(updateThisStage: ITitle) {
-  //   this.httpService.updateStage(updateThisStage)
-  //       .pipe(first()).subscribe({
-  //     next: (updateThisStageSuccess) => {
-  //       console.log(updateThisStage)
-  //       this.$updateThisStageSuccess.next(this.updateStageSuccess)
-  //     },
-  //     error: (updateThisStageError) => {
-  //       console.log(updateThisStageError)
-  //       this.$updateThisStageError.next(this.updateStageFail)
-  //     }
-  //   })
-  //
-  // }
+  updateStage(updateThisStage: ITitle) {
+    this.httpService.updateStage(updateThisStage)
+        .pipe(first()).subscribe({
+      next: (updateThisStageSuccess) => {
+        console.log(updateThisStage)
+        this.$updateThisStageSuccess.next(this.updateStageSuccess)
+      },
+      error: (updateThisStageError) => {
+        console.log(updateThisStageError)
+        this.$updateThisStageError.next(this.updateStageFail)
+      }
+    })
+
+  }
 
   newTitle(newStage: ITitle) {
 

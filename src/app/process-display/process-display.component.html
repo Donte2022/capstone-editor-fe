@@ -1,4 +1,4 @@
-<h2>Stages Created</h2>
+<h4>Stages Created</h4>
 
 <div *ngFor="let displayInfo of latestProcessList">
 
@@ -19,9 +19,11 @@
 
 
 <div>
-<!--    <button (click)="Edit(displayInfo)" class="btn btn-success">Edit</button>-->
+    <button (click)="editStage(displayInfo)" class="btn btn-success">Edit</button>
     <button (click)="Delete(displayInfo.id)" class="btn btn-danger" type="button">Delete</button>
     <button (click)="Results()" class="btn btn-primary" type="button">Results</button>
+    <button (click)="addProcess()" class="btn btn-success" type="button">Add Process</button>
+
 </div>
 </div>
 </div>

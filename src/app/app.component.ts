@@ -34,7 +34,6 @@ export class AppComponent {
           this.isCreatingProcess = isCreatingProcess;
         });
 
-
     this.processService.$isViewingMain.subscribe(
         isViewingMain => {
           this.isViewingMain = isViewingMain;
@@ -44,6 +43,7 @@ export class AppComponent {
         isUpdating => {
           this.isUpdating = isUpdating;
         });
+
       this.processService.$isReviewing.subscribe(
           isReviewing => {
               this.isReviewing = isReviewing;

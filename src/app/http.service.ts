@@ -29,18 +29,20 @@ export class HttpService {
 
   deleteSelectedStage(id:number) {
     return this.httpClient.delete(
-        "http://localhost:8080/api/processes/" + id,
-    ) as Observable<IProcess>;
+        "http://localhost:8080/api/titles/" + id,
+    ) as Observable<ITitle>;
 
   }
 
-  updateStage(updateThisStage: IProcess) {
+  updateStage(updateThisStage: ITitle) {
     return this.httpClient.put(
-        "http://localhost:8080/api/processes/" + `${updateThisStage.id}`,
+        "http://localhost:8080/api/titles/" + `${updateThisStage.id}`,
         {
-          "dateCreated":updateThisStage.date,
-          "processTitle": updateThisStage.title,
-          "prompt": updateThisStage.prompt,
+          "endDate": updateThisStage.endDate,
+          "startDate":updateThisStage.startDate,
+          "title": updateThisStage.title,
+          "description":updateThisStage.description
+          // "prompt": updateThisStage.prompt,
         }
     ) as Observable<IProcess>;
 
