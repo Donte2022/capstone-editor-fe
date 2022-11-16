@@ -48,5 +48,12 @@ export class ProcessDisplayComponent implements OnInit {
 
   Results() {
     console.log("getting results")
+    this.processService.$isCreatingProcess.next(false);
+    this.processService.$isUpdating.next(false);
+    this.processService.$isViewingMain.next(false);
+    this.processService.$isCreatingStage.next(false);
+    this.processService.$isCreatingTitle.next(false);
+    this.processService.$isReviewing.next(true);
+
   }
 }

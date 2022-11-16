@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
 import {HttpService} from "./http.service";
 import {BehaviorSubject, first} from "rxjs";
 import {IProcess} from "./interfaces/IProcess";
@@ -17,6 +16,13 @@ export class ProcessService {
   private updateStageSuccess = "Update was successful!";
   $updateThisStageError = new BehaviorSubject<string | null>(null);
   private updateStageFail = "Stage fail to update. Please try again later";
+
+  $isCreatingStage = new BehaviorSubject<boolean>(false);
+  $isCreatingTitle = new BehaviorSubject<boolean>(false);
+  $isCreatingProcess = new BehaviorSubject<boolean>(false);
+  $isViewingMain = new BehaviorSubject<boolean>(false);
+  $isUpdating = new BehaviorSubject<boolean>(false);
+  $isReviewing = new BehaviorSubject<boolean>(false);
 
   constructor(private httpService: HttpService) {
   }
@@ -44,6 +50,7 @@ export class ProcessService {
     this.httpService.updateStage(updateThisStage)
         .pipe(first()).subscribe({
       next: (updateThisStageSuccess) => {
+        console.log(updateThisStage)
         this.$updateThisStageSuccess.next(this.updateStageSuccess)
       },
       error: (updateThisStageError) => {

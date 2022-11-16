@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ProcessService} from "../process.service";
 
 @Component({
   selector: 'app-main',
@@ -7,14 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor( ) { }
+  constructor(private processService: ProcessService) { }
 
   ngOnInit(): void {
   }
 
 
-
     createStage() {
+      this.processService.$isCreatingProcess.next(false);
+      this.processService.$isUpdating.next(false);
+      this.processService.$isViewingMain.next(false);
+      this.processService.$isCreatingStage.next(false);
+      this.processService.$isCreatingTitle.next(true);
 
     }
 }

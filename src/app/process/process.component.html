@@ -5,20 +5,31 @@
     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
         <h3>Create a Process</h3>
         <form #login="ngForm">
+            <div><h4>Title: </h4> </div>
+<!--            {{something.title}}-->
+
+<!--            <div class="input-group mb-3">-->
+<!--                <span class="input-group-text" id="basic-addon1">Process Title: </span>-->
+<!--                <input ngModel name="Process" class="form-control" aria-label="Process">-->
+<!--            </div>-->
+            <br>
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Process Title: </span>
-                <input ngModel name="Process" class="form-control" aria-label="Process">
+                <span class="input-group-text" id="basic-addon1">Prompt: </span>
+                <input ngModel name="Prompt" class="form-control" aria-label="Prompt" type="text">
             </div>
+            <br>
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon2">Prompt: </span>
-                <input ngModel name="Prompt" class="form-control" aria-label="Prompt" type="password">
+                <span class="input-group-text" id="basic-addon2">Response: </span>
+                <input ngModel name="Response" class="form-control" aria-label="Response" type="text">
             </div>
+            <br>
+
         </form>
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-        <button (click)="CreateProcess()" class="btn btn-success">Create Process</button>
+        <button (click)="CreateProcess()" class="btn btn-success">Back</button>
         <button (click)="Cancel()" class="btn btn-danger" type="button">Cancel</button>
-        <button (click)="CreatePrompt()" class="btn btn-primary" type="button">Create next prompt</button>
+        <button (click)="CreatePrompt()" class="btn btn-primary" type="button">Create new prompt</button>
     </div>
 </div>
 

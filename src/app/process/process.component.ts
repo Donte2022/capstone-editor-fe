@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ProcessService} from "../process.service";
 
 @Component({
   selector: 'app-process',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProcessComponent implements OnInit {
 
-  constructor() { }
+  constructor(private processService: ProcessService) { }
 
   ngOnInit(): void {
   }
@@ -24,6 +25,11 @@ export class ProcessComponent implements OnInit {
 
   Cancel() {
     console.log("cancel Prompt")
+    this.processService.$isCreatingProcess.next(false);
+    this.processService.$isUpdating.next(false);
+    this.processService.$isViewingMain.next(true);
+    this.processService.$isCreatingStage.next(false);
+    this.processService.$isCreatingTitle.next(false);
 
   }
 }

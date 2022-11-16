@@ -21,7 +21,7 @@ export class HttpService {
   // createStage() {
   //   return this.httpClient.post(
   //       "http://localhost:8080/api/processes",
-  //       IStageForm
+  //       IProcess
   //   ) as Observable<IProcess>;
   //
   // }
@@ -35,12 +35,11 @@ export class HttpService {
 
   updateStage(updateThisStage: IProcess) {
     return this.httpClient.put(
-        "http://localhost:8080/api/processes" + `${updateThisStage.iD}`,
+        "http://localhost:8080/api/processes/" + `${updateThisStage.iD}`,
         {
           "dateCreated":updateThisStage.date,
           "processTitle": updateThisStage.title,
           "prompt": updateThisStage.prompt,
-
         }
     ) as Observable<IProcess>;
 
