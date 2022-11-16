@@ -3,18 +3,24 @@
 <div *ngFor="let displayInfo of latestProcessList">
 
     <div>
-    <div><b> Id: </b>{{displayInfo.iD}}</div>
+    <div><b> ID: </b>{{displayInfo.id}}</div>
 
-    <div><b>Date Created: </b>{{displayInfo.date | date}} </div>
+        <div><b> Stage Title: </b>{{displayInfo.title}}</div>
 
-    <div><b> Stage Title: </b>{{displayInfo.title}}</div>
+        <div><b> Start Date: </b>{{displayInfo.startDate | date}} </div>
+
+        <div><b> End Date: </b>{{displayInfo.endDate | date}} </div>
+
+
+
+        <div><b> Description: </b>{{displayInfo.description}}</div>
 
 <!--    <div><b> Prompt:</b>{{displayInfo.prompt}}</div>-->
 
 
 <div>
-    <button (click)="Edit(displayInfo)" class="btn btn-success">Edit</button>
-    <button (click)="Delete(displayInfo.iD)" class="btn btn-danger" type="button">Delete</button>
+<!--    <button (click)="Edit(displayInfo)" class="btn btn-success">Edit</button>-->
+    <button (click)="Delete(displayInfo.id)" class="btn btn-danger" type="button">Delete</button>
     <button (click)="Results()" class="btn btn-primary" type="button">Results</button>
 </div>
 </div>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpService} from "./http.service";
 import {BehaviorSubject, first} from "rxjs";
 import {IProcess} from "./interfaces/IProcess";
+import {ITitle} from "./interfaces/ITitle";
 
 @Injectable({
   providedIn: 'root'
@@ -46,35 +47,39 @@ export class ProcessService {
     })
   }
 
-  updateStage(updateThisStage: IProcess) {
-    this.httpService.updateStage(updateThisStage)
-        .pipe(first()).subscribe({
-      next: (updateThisStageSuccess) => {
-        console.log(updateThisStage)
-        this.$updateThisStageSuccess.next(this.updateStageSuccess)
-      },
-      error: (updateThisStageError) => {
-        console.log(updateThisStageError)
-        this.$updateThisStageError.next(this.updateStageFail)
-      }
-    })
+  // updateStage(updateThisStage: ITitle) {
+  //   this.httpService.updateStage(updateThisStage)
+  //       .pipe(first()).subscribe({
+  //     next: (updateThisStageSuccess) => {
+  //       console.log(updateThisStage)
+  //       this.$updateThisStageSuccess.next(this.updateStageSuccess)
+  //     },
+  //     error: (updateThisStageError) => {
+  //       console.log(updateThisStageError)
+  //       this.$updateThisStageError.next(this.updateStageFail)
+  //     }
+  //   })
+  //
+  // }
 
-  }
+  newTitle(newStage: ITitle) {
 
-  newTitle(newStage: IProcess) {
+    if (!newStage.title.length) {
+      console.log ("Field is empty");
+    }
 
-    // if (newStage.title.length <1) {
-    //   console.log ("Field is empty");
-    // }
-
-    if (newStage.title.length > 1)
+    if (newStage.title.length)
     {
-      const stage: IProcess = {
+      console.log(newStage)
+      console.log(newStage.title)
+      const stage: ITitle = {
 
-        iD: newStage.iD,
-        date: newStage.date,
+        id: newStage.id,
+        startDate: newStage.startDate,
+        endDate: newStage.endDate,
         title: newStage.title,
-        prompt: newStage.prompt,
+        description: newStage.description
+        // prompt: newStage.prompt,
       }
 
       this.httpService.createNewTitle(stage).subscribe({

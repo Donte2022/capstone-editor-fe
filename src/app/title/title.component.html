@@ -19,10 +19,10 @@
                 <span class="input-group-text" id="basic-addon4">Description: </span>
                 <input type="textarea" ngModel name="description" class="form-control" aria-label="description">
             </div>
-            <button type="submit" stageTitle>Create Title</button>
+            <button type="submit" stageTitle>Save</button>
 
     </form>
-        <button  (click)="generateStage()">Add Process</button>
+        <button  (click)="generateStage(newStage.value)">Add Process</button>
         <button (click)="cancel()">Cancel</button>
 
     </div>

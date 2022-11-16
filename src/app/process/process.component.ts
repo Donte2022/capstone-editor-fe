@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProcessService} from "../process.service";
+import {IProcess} from "../interfaces/IProcess";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-process',
@@ -10,8 +12,15 @@ export class ProcessComponent implements OnInit {
 
 
 
-    public people  =  [{}
-    ];
+    // public people: IProcess =  [{
+    //   "iD": iD,
+    //   "startDate": startDate,
+    //   "endDate":endDate,
+    //   "title": title,
+    //   "prompt": prompt
+    // }
+    // ];
+    public textarea = {};
 
   constructor(private processService: ProcessService) { }
 
@@ -66,5 +75,11 @@ export class ProcessComponent implements OnInit {
     <textarea>`;
     // @ts-ignore
     document.querySelector('.showTextareaField').appendChild(row);
+  }
+
+  Save(stageData:NgForm) {
+    console.log("saving")
+    console.log(stageData);
+
   }
 }

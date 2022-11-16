@@ -11,14 +11,32 @@ import {IProcess} from "../interfaces/IProcess";
 })
 export class TitleComponent implements OnInit {
 
+  // public stageInfo: ITitle = [{
+  //   iD: iD,
+  //   title: title,
+  //   startDate: startDate,
+  //   endDate: endDate,
+  //   description: description
+  // }];
+
+  // public newStage: ITitle = [{
+  //   iD: newStage.iD,
+  //     title: title,
+  //     startDate: startDate,
+  //     endDate: endDate,
+  //     description: description
+  // }];
 
   constructor(private processService: ProcessService) { }
 
   ngOnInit(): void {
   }
 
-  generateStage() {
+  generateStage(newStage:NgForm) {
     console.log("Generating Stage")
+    console.log(newStage)
+    // this.newStage = newStage;
+    // console.log(this.stageInfo)
     this.processService.$isCreatingProcess.next(true);
     this.processService.$isUpdating.next(false);
     this.processService.$isViewingMain.next(false);
@@ -36,7 +54,7 @@ export class TitleComponent implements OnInit {
       this.processService.$isCreatingStage.next(false);
       this.processService.$isCreatingTitle.next(false);
     this.processService.newTitle(
-        newStage.value as IProcess
+        newStage.value as ITitle
     );
 
     }

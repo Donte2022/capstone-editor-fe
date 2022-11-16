@@ -4,7 +4,7 @@
 <div class="position-absolute top-50 start-50 translate-middle">
     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
         <h3>Create a Process</h3>
-        <form #login="ngForm">
+        <form #stageData="ngForm">
             <div><h4>Title: </h4> </div>
 <!--            {{something.title}}-->
 
@@ -44,7 +44,8 @@
 
 
 
-                <div class="showTextareaField" ng-hide="radioBtn" name="inputField">
+                <div class="showTextareaField" ng-hide="radioBtn" name="inputField" [(ngModel)]="textarea">
+                    {{textarea}}
                     <button (click)="addTextarea()">Add Textarea</button>
 
                 </div>
@@ -59,6 +60,7 @@
 <!--        <button (click)="CreateProcess()" class="btn btn-success">Back</button>-->
         <button (click)="Cancel()" class="btn btn-danger" type="button">Cancel</button>
         <button (click)="CreatePrompt()" class="btn btn-primary" type="button">Create new prompt</button>
+        <button (click)="Save(stageData)" >Save</button>
     </div>
 </div>
 

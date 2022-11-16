@@ -1,6 +1,6 @@
 export interface IProcess
 {
-    iD: number;
+    id: number;
     date: Date;
     title: string;
     prompt: string;
