@@ -12,6 +12,7 @@ import { SummaryComponent } from './summary/summary.component';
 import { ResultsComponent } from './results/results.component';
 import { UpdateComponent } from './update/update.component';
 import { NewStageComponent } from './new-stage/new-stage.component';
+import { PromptComponent } from './prompt/prompt.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NewStageComponent } from './new-stage/new-stage.component';
     SummaryComponent,
     ResultsComponent,
     UpdateComponent,
-    NewStageComponent
+    NewStageComponent,
+    PromptComponent
   ],
   imports: [
     BrowserModule,

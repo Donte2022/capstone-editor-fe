@@ -4,14 +4,7 @@
 <div class="position-absolute top-50 start-50 translate-middle">
     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
         <h3>Title</h3>
-<!--        <ngb-panel *ngFor="let stageData of updatedStage">-->
-<!--            <ng-template>-->
-<!--            {{stageData.id}}-->
-<!--            {{stageData.title}}-->
-<!--            {{stageData.startDate}}-->
-<!--            </ng-template>-->
-<!--        </ngb-panel>-->
-<!--    <div *ngFor="let stageData of updatedStage">   </div>-->
+
         <form #updatedStageData="ngForm" (ngSubmit)="submitUpdateStage(updatedStageData.value)">
 
             <div class="input-group mb-0">

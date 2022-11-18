@@ -53,7 +53,7 @@ export class TitleComponent implements OnInit {
       this.processService.$isViewingMain.next(true);
       this.processService.$isCreatingStage.next(false);
       this.processService.$isCreatingTitle.next(false);
-    this.processService.newTitle(
+    this.processService.createStage(
         newStage.value as ITitle
     );
 

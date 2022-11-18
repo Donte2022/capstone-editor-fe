@@ -4,7 +4,7 @@
 <div class="position-absolute top-50 start-50 translate-middle">
     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
         <h3>Create a Process</h3>
-        <form #stageData="ngForm">
+        <form #createPrompt="ngForm" (ngSubmit)="savePrompt(createPrompt)">
             <div><h4>Title: </h4> </div>
 <!--            {{something.title}}-->
 
@@ -12,10 +12,20 @@
 <!--                <span class="input-group-text" id="basic-addon1">Process Title: </span>-->
 <!--                <input ngModel name="Process" class="form-control" aria-label="Process">-->
 <!--            </div>-->
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon0">Title ID: </span>
+                <input ngModel name="idOfTitle" class="form-control" aria-label="idOfTitle" type="number">
+            </div>
             <br>
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Prompt: </span>
-                <input ngModel name="Prompt" class="form-control" aria-label="Prompt" type="text">
+                <span class="input-group-text" id="basic-addon1">Process: </span>
+                <input ngModel name="process" class="form-control" aria-label="process" type="text">
+            </div>
+            <br>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2">Prompt: </span>
+                <input ngModel name="prompt" class="form-control" aria-label="Prompt" type="text">
             </div>
             <br>
 <!--            <div class="input-group mb-3">-->
@@ -37,21 +47,24 @@
                 <div class="showRadioField" ng-hide="radioBtn" name="radioBtn">
                 <button (click)="addRadio()">Add Radio</button>
                 </div>
-                <div class="showInputField" ng-hide="radioBtn" name="inputField">
+<!--                <div class="showInputField" ng-hide="radioBtn" name="inputField">-->
+                    <div>
 <!--                        <input type="radio">-->
                     <button (click)="addInput()">Add Input</button>
                 </div>
 
 
 
-                <div class="showTextareaField" ng-hide="radioBtn" name="inputField" [(ngModel)]="textarea">
+<!--                <div class="showTextareaField" ng-hide="radioBtn" name="inputField" [(ngModel)]="textarea">-->
                     {{textarea}}
+                <div>
                     <button (click)="addTextarea()">Add Textarea</button>
 
                 </div>
 
             </div>
 
+            <button (click)="savePrompt(createPrompt)">Save</button>
 
             <br>
         </form>
@@ -60,7 +73,6 @@
 <!--        <button (click)="CreateProcess()" class="btn btn-success">Back</button>-->
         <button (click)="Cancel()" class="btn btn-danger" type="button">Cancel</button>
         <button (click)="CreatePrompt()" class="btn btn-primary" type="button">Create new prompt</button>
-        <button (click)="Save(stageData)" >Save</button>
     </div>
 </div>
 

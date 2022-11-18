@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpService} from "./http.service";
 import {BehaviorSubject, first} from "rxjs";
-import {IProcess} from "./interfaces/IProcess";
 import {ITitle} from "./interfaces/ITitle";
 
 @Injectable({
@@ -25,23 +24,11 @@ export class ProcessService {
   $isUpdating = new BehaviorSubject<boolean>(false);
   $isReviewing = new BehaviorSubject<boolean>(false);
 
-   public updatedStageData: BehaviorSubject<ITitle[]> = new BehaviorSubject<ITitle[]>([]);
-  //      [{
-  //   id: this.updatedStageData.id;
-  //   title: title;
-  //   startDate: Date;
-  //   endDate: Date;
-  //   description:;
-  // }];
-
    newStage: string = "";
-
-  // $oldTitle = new BehaviorSubject<ITitle[]>([]);
 
   updateThisStage(displayInfo: any) {
     console.log(displayInfo)
     this.newStage = displayInfo;
-
   }
 
   constructor(private httpService: HttpService) {
@@ -50,12 +37,6 @@ export class ProcessService {
   getTitle() {
     this.httpService.getTitles()
   }
-
-  // updateThisStage() {
-  //   this.updatedStageData = stageInfo;
-  //   this.$oldTitle = this.updatedStageData;
-  // }
-
 
   deleteStage(id: number) {
 
@@ -84,25 +65,24 @@ export class ProcessService {
         this.$updateThisStageError.next(this.updateStageFail)
       }
     })
-
   }
 
-  newTitle(newStage: ITitle) {
+  createStage(newStage: ITitle) {
 
-    if (!newStage.title.length) {
+    if (!newStage.stageTitle.length) {
       console.log ("Field is empty");
     }
 
-    if (newStage.title.length)
+    if (newStage.stageTitle.length)
     {
       console.log(newStage)
-      console.log(newStage.title)
+      console.log(newStage.stageTitle)
       const stage: ITitle = {
 
         id: newStage.id,
         startDate: newStage.startDate,
         endDate: newStage.endDate,
-        title: newStage.title,
+        stageTitle: newStage.stageTitle,
         description: newStage.description
         // prompt: newStage.prompt,
       }
@@ -110,17 +90,18 @@ export class ProcessService {
       this.httpService.createNewTitle(stage).subscribe({
       next: (stage) => {
 
-        console.log("title Created")
+        console.log("Title was Created!")
         console.log(stage)
       },
         error: (error) => {
 
-        console.log("title fail to create!")
+        console.log("Fail to create!")
           console.log(error)
         },
       });
     }
     return true;
-
   }
+
+
 }

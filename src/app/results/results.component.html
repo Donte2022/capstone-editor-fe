@@ -1,24 +1,31 @@
 <h2>Results</h2>
 
-<h4>Date: </h4>
-<!--{{stage.dateCompleted | date}}-->
+<div *ngFor="let displayInfo of completedStageList">
 
-<h4> Stage Title: </h4>
-<!--{{stage.processTitle}}-->
+    <div><b> ID: </b>{{displayInfo.id}}</div>
 
-<h4> Total Completed: </h4>
-<!--{{stage.total}}-->
+    <div><b> Stage Title: </b>{{displayInfo.StageTitle}}</div>
 
-<h4>ID: </h4>
-<!--{{stage.id}}-->
+    <div><b> Start Date: </b>{{displayInfo.startDate | date}} </div>
 
-<h4> Prompt(s): </h4>
-<!--{{stage.prompts}}-->
+    <div><b> End Date: </b>{{displayInfo.endDate | date}} </div>
 
-<h4> Type: </h4>
-<!--{{stage.promptType}}-->
+    <div><b> Description: </b>{{displayInfo.description}}</div>
 
-<h4> Response: </h4>
-<!--{{stage.response}}-->
+    <div><b> Prompt(s): </b>{{displayInfo.prompt}}</div>
 
+    <div><b> Process(s): </b>{{displayInfo.process}}</div>
+
+    <div><b> Response(s): </b> {{displayInfo.response}}</div>
+
+</div>
 <button (click) = "mainMenu()">Main</button>
+
+<div>
+
+
+
+
+
+
+
