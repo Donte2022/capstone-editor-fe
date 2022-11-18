@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HttpService} from "../http.service";
 import {ProcessService} from "../process.service";
 import {ITitle} from "../interfaces/ITitle";
+import {IProcess} from "../interfaces/IProcess";
 
 @Component({
   selector: 'app-update',
@@ -13,7 +14,7 @@ export class UpdateComponent implements OnInit {
 
 
     // @ts-ignore
-    updatedStage = {id: "", title: "", endDate: "", startDate: "", description: ""};
+    updatedStage = {id: "", stageTitle: "", endDate: "", startDate: "", description: ""};
 
 
 
@@ -51,7 +52,7 @@ export class UpdateComponent implements OnInit {
         
     }
 
-    submitUpdateStage(updatedStageData: ITitle) {
+    submitUpdateStage(updatedStageData: IProcess) {
       console.log("sending update")
         console.log(updatedStageData)
         this.processService.updateStage(updatedStageData);

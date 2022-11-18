@@ -5,6 +5,9 @@
     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
         <h3>Create a Process</h3>
         <form #createPrompt="ngForm" (ngSubmit)="savePrompt(createPrompt)">
+
+            {{createPrompt| json}}
+
             <div><h4>Title: </h4> </div>
 <!--            {{something.title}}-->
 

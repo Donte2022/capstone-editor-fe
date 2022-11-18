@@ -5,6 +5,7 @@ import {IProcess} from "./interfaces/IProcess";
 import {ITitle} from "./interfaces/ITitle";
 import {IPrompt} from "./interfaces/IPrompt";
 import {ICompete} from "./interfaces/ICompete";
+import {IStage} from "./interfaces/IStage";
 
 @Injectable({
   providedIn: 'root'
@@ -21,29 +22,30 @@ export class HttpService {
     ) as Observable<ITitle>;
   }
 
-  createNewTitle(title: ITitle) {
+  createNewStage(title: IStage) {
     return this.httpClient.post(
         "http://localhost:8080/api/stage",
         title
-    ) as Observable<ITitle>;
+    ) as Observable<IStage>;
   }
 
   deleteSelectedStage(id:number) {
     return this.httpClient.delete(
-        "http://localhost:8080/api/titles/" + id,
-    ) as Observable<ITitle>;
+        "http://localhost:8080/api/stage/" + id,
+    ) as Observable<IStage>;
 
   }
 
-  updateStage(updateThisStage: ITitle) {
+  updateStage(updateThisStage: IProcess) {
     return this.httpClient.put(
-        "http://localhost:8080/api/titles/" + `${updateThisStage.id}`,
+        "http://localhost:8080/api/stage/" + `${updateThisStage.id}`,
         {
+          "id": updateThisStage.id,
           "endDate": updateThisStage.endDate,
           "startDate":updateThisStage.startDate,
-          "title": updateThisStage.stageTitle,
-          "description":updateThisStage.description
-          // "prompt": updateThisStage.prompt,
+          "stageTitle": updateThisStage.stageTitle,
+          "description":updateThisStage.description,
+          "prompt": updateThisStage.prompt
         }
     ) as Observable<IProcess>;
 
@@ -77,6 +79,12 @@ export class HttpService {
       return this.httpClient.get(
           "http://localhost:8888/api/completedstage/all"
       ) as Observable<ICompete>;
+    }
+
+    getStages() {
+      return this.httpClient.get(
+          "http://localhost:8080/api/stage/all"
+      ) as Observable<IStage>;
     }
 }
 

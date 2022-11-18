@@ -3,6 +3,7 @@ import {ProcessService} from "../process.service";
 import {NgForm} from "@angular/forms";
 import {ITitle} from "../interfaces/ITitle";
 import {IProcess} from "../interfaces/IProcess";
+import {IStage} from "../interfaces/IStage";
 
 @Component({
   selector: 'app-title',
@@ -46,7 +47,7 @@ export class TitleComponent implements OnInit {
 
   }
 
-    stageTitle(newStage: NgForm) {
+    createStage(newStage: NgForm) {
     console.log(newStage)
       this.processService.$isCreatingProcess.next(false);
       this.processService.$isUpdating.next(false);
@@ -54,7 +55,7 @@ export class TitleComponent implements OnInit {
       this.processService.$isCreatingStage.next(false);
       this.processService.$isCreatingTitle.next(false);
     this.processService.createStage(
-        newStage.value as ITitle
+        newStage.value as IStage
     );
 
     }

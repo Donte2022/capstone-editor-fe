@@ -2,9 +2,9 @@
 <div class="position-absolute top-50 start-50 translate-middle">
     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
         <h3>Title</h3>
-        <form #newStage="ngForm" (ngSubmit)="stageTitle(newStage)">
+        <form #newStage="ngForm" (ngSubmit)="createStage(newStage)">
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Process Title: </span>
+                <span class="input-group-text" id="basic-addon1">Stage Title: </span>
                 <input ngModel name="stageTitle" class="form-control" aria-label="title">
             </div>
             <div class="input-group mb-3">

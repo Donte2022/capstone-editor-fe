@@ -12,12 +12,12 @@ import {ITitle} from "../interfaces/ITitle";
 })
 export class ProcessDisplayComponent implements OnInit {
 
-  latestProcessList!: ITitle[];
+  latestProcessList!: IProcess[];
 
   constructor(private httpService: HttpService,
               private processService: ProcessService) {
 
-    this.httpService.getTitles()
+    this.httpService.getStages()
         .pipe(first()).subscribe({
       next: (data) => {
         console.log(data)
@@ -66,7 +66,7 @@ export class ProcessDisplayComponent implements OnInit {
     this.processService.$isCreatingTitle.next(false);
   }
 
-  editStage(displayInfo: ITitle) {
+  editStage(displayInfo: IProcess) {
     this.processService.$isCreatingProcess.next(false);
     this.processService.$isUpdating.next(false);
     this.processService.$isViewingMain.next(false);

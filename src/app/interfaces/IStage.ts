@@ -1,9 +1,8 @@
-export interface IProcess
+export interface IStage
 {
-    id: number;
+    // id: number;
     stageTitle: String;
     startDate: Date;
     endDate: Date;
     description: string;
-    prompt: string;
 }

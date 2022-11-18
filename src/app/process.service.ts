@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpService} from "./http.service";
 import {BehaviorSubject, first} from "rxjs";
 import {ITitle} from "./interfaces/ITitle";
+import {IStage} from "./interfaces/IStage";
+import {IProcess} from "./interfaces/IProcess";
 
 @Injectable({
   providedIn: 'root'
@@ -34,9 +36,9 @@ export class ProcessService {
   constructor(private httpService: HttpService) {
   }
 
-  getTitle() {
-    this.httpService.getTitles()
-  }
+  // getTitle() {
+  //   this.httpService.getTitles()
+  // }
 
   deleteStage(id: number) {
 
@@ -53,7 +55,7 @@ export class ProcessService {
     })
   }
 
-  updateStage(updateThisStage: ITitle) {
+  updateStage(updateThisStage: IProcess) {
     this.httpService.updateStage(updateThisStage)
         .pipe(first()).subscribe({
       next: (updateThisStageSuccess) => {
@@ -67,7 +69,7 @@ export class ProcessService {
     })
   }
 
-  createStage(newStage: ITitle) {
+  createStage(newStage: IStage) {
 
     if (!newStage.stageTitle.length) {
       console.log ("Field is empty");
@@ -77,9 +79,9 @@ export class ProcessService {
     {
       console.log(newStage)
       console.log(newStage.stageTitle)
-      const stage: ITitle = {
+      const stage: IStage = {
 
-        id: newStage.id,
+        // id: newStage.id,
         startDate: newStage.startDate,
         endDate: newStage.endDate,
         stageTitle: newStage.stageTitle,
@@ -87,7 +89,7 @@ export class ProcessService {
         // prompt: newStage.prompt,
       }
 
-      this.httpService.createNewTitle(stage).subscribe({
+      this.httpService.createNewStage(stage).subscribe({
       next: (stage) => {
 
         console.log("Title was Created!")

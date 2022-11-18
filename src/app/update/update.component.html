@@ -8,13 +8,14 @@
         <form #updatedStageData="ngForm" (ngSubmit)="submitUpdateStage(updatedStageData.value)">
 
             <div class="input-group mb-0">
-                <input id="eventId" name="id" [ngModel]="this.updatedStage.id" type="hidden" class="form-control">
+                <input id="id" name="id" [ngModel]="this.updatedStage.id" type="hidden" class="form-control">
             </div>
 
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Process Title: </span>
-                <input [ngModel]="this.updatedStage.title" id="name" name="title" class="form-control"  aria-label="title">
+                <span class="input-group-text" id="basic-addon1">Stage Title: </span>
+                <input type="text" [ngModel]="this.updatedStage.stageTitle" name="stageTitle"  class="form-control"  aria-label="StageTitle">
             </div>
+
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon2">Start Date: </span>
                 <input type="date" [ngModel]="this.updatedStage.startDate"  name="startDate" class="form-control" aria-label="startDate">
