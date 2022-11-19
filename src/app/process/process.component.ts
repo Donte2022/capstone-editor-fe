@@ -67,34 +67,29 @@ export class ProcessComponent implements OnInit {
 
   }
 
-  addInput() {
-    let row = document.createElement('div');
-    row.className = 'row';
-    row.innerHTML = `
-    <br>
-    <input type="text">`;
-    // @ts-ignore
-    document.querySelector('.showInputField').appendChild(row);
-  }
-
   addRadio() {
-    let row = document.createElement('div');
-    row.className = 'row';
+    let row = document.createElement("div");
+    row.className = "row";
     row.innerHTML = `
     <br>
-    <input type="radio">`;
+    <div>
+    <div>
+    <span> Prompt text #1: </span>
+    <input type="text">
+    </div>
+    <input type="radio">
+    </div>
+    <br>
+    <div>
+    <div>
+    <span> Prompt text #2: </span>
+    <input type="text">
+    </div>
+    <input type="radio">
+    </div>`;
+
     // @ts-ignore
     document.querySelector('.showRadioField').appendChild(row);
-  }
-
-  addTextarea() {
-    let row = document.createElement('div');
-    row.className = 'row';
-    row.innerHTML = `
-    <br>
-    <textarea>`;
-    // @ts-ignore
-    document.querySelector('.showTextareaField').appendChild(row);
   }
 
   savePrompt(createPrompt: FormGroup) {
@@ -107,5 +102,52 @@ export class ProcessComponent implements OnInit {
 
   addMultiple() {
 
+    let row = document.createElement("div");
+    row.className = "row";
+    row.innerHTML = `
+    <br>
+    
+    <div>
+    <div>
+    <span> Prompt Multiple text #1: </span>
+    <input type="text">
+    </div>
+    
+    <input type="radio">
+    </div>
+    <br>
+    
+    <div>
+    <div>
+    <span> Prompt Multiple text #2: </span>
+    <input type="text">
+    </div>
+    
+    <input type="radio">
+    <div>
+    <br>
+    
+    <div>
+    <div>
+    <span> Prompt Multiple text #3: </span>
+    <input type="text">
+    </div>
+    
+    <input type="radio">
+    </div>
+    <br>
+    
+    <div>
+    <div>
+    <span> Prompt Multiple text #4: </span>
+    <input type="text">
+    </div>
+    
+    <input type="radio">
+    </div>
+    </div>`;
+    // @ts-ignore
+    document.querySelector('.showMultiField').appendChild(row);
   }
+
 }
