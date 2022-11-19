@@ -4,9 +4,9 @@
 <div class="position-absolute top-50 start-50 translate-middle">
     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
         <h3>Create a Process</h3>
-        <form #createPrompt="ngForm" (ngSubmit)="savePrompt(createPrompt)">
+        <form [formGroup]="stageForm"  (ngSubmit)="savePrompt(stageForm)">
 
-            {{createPrompt| json}}
+<!--            {{createPrompt| json}}-->
 
             <div><h4>Title: </h4> </div>
 <!--            {{something.title}}-->
@@ -18,17 +18,79 @@
 
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon0">Title ID: </span>
-                <input ngModel name="idOfTitle" class="form-control" aria-label="idOfTitle" type="number">
+                <input formControlName="stageTitle" ngModel name="idOfTitle" class="form-control" aria-label="idOfTitle" type="number">
             </div>
             <br>
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Process: </span>
-                <input ngModel name="process" class="form-control" aria-label="process" type="text">
+                <span class="input-group-text" id="basic-addon1">Process Title: </span>
+                <input formControlName="process" ngModel name="process" class="form-control" aria-label="process" type="text">
             </div>
             <br>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon2">Prompt: </span>
-                <input ngModel name="prompt" class="form-control" aria-label="Prompt" type="text">
+            <div class="input-group mb-3" name="trueOrFalse">
+<!--                <span class="input-group-text" id="basic-addon2">Prompt Title: </span>-->
+                <br>
+                <div>
+                    <span class="input-group-text" id="basic-addon3"> Select Response type: </span>
+                    <br>
+                    <div class="showRadioField" ng-hide="radioBtn" name="radioBtn">
+                        <button (click)="addRadio()"> True or False</button>
+                    </div>
+                    <!--                <div class="showInputField" ng-hide="radioBtn" name="inputField">-->
+                    <div>
+                        <button (click)="addMultiple()">Multiple Choice</button>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <span class="input-group-text" id="basic-addon4">Prompt text #1: </span>
+                    <input formControlName="prompt" [(ngModel)]="prompt" class="form-control" aria-label="Prompt" type="text">
+                    <div class="m-1">
+                        <input type="radio" >{{prompt}}
+                    </div>
+                </div>
+                <div>
+
+                    <span class="input-group-text" id="basic-addon6">Prompt text #2: </span>
+                    <input formControlName="prompt2" [(ngModel)]="prompt2" class="form-control" aria-label="Prompt" type="text">
+                    <div class="m-1">
+                        <input type="radio" >{{prompt}}
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div class="input-group mb-3" name="multipleQuestion">
+                <!--                <span class="input-group-text" id="basic-addon2">Prompt Title: </span>-->
+                <br>
+                <div>
+                    <span class="input-group-text" id="basic-addon7">Prompt text #1: </span>
+                    <input formControlName="prompt" [(ngModel)]="prompt" class="form-control" aria-label="Prompt" type="text">
+                    <div class="m-1">
+                        <input type="radio" >{{prompt}}
+                    </div>
+                </div>
+                <div>
+
+                    <span class="input-group-text" id="basic-addon8">Prompt text #2: </span>
+                    <input formControlName="prompt2" [(ngModel)]="prompt2" class="form-control" aria-label="Prompt" type="text">
+                    <div class="m-1">
+                        <input type="radio" >{{prompt}}
+                    </div>
+                </div>
+                <div>
+                    <span class="input-group-text" id="basic-addon9">Prompt text #3: </span>
+                    <input formControlName="prompt" [(ngModel)]="prompt" class="form-control" aria-label="Prompt" type="text">
+                    <div class="m-1">
+                        <input type="radio" >{{prompt}}
+                    </div>
+                </div>
+                <div>
+
+                    <span class="input-group-text" id="basic-addon10">Prompt text #4: </span>
+                    <input formControlName="prompt2" [(ngModel)]="prompt2" class="form-control" aria-label="Prompt" type="text">
+                    <div class="m-1">
+                        <input type="radio" >{{prompt}}
+                    </div>
+                </div>
             </div>
             <br>
 <!--            <div class="input-group mb-3">-->
@@ -39,35 +101,8 @@
 <!--&lt;!&ndash;                <input type="checkbox"> Checkbox&ndash;&gt;-->
 <!--&lt;!&ndash;                <textarea></textarea> Textarea&ndash;&gt;-->
 <!--            </div>-->
-            <div>
-                <span class="input-group-text" id="basic-addon3"> Select type: </span>
-<!--                <select  name="selected_type" class="form-control">-->
-<!--                    <option value=""> Radio Btn </option>-->
-<!--                    <option name="Input">Input</option>-->
-<!--                    <option name="textarea">Textarea</option>-->
-<!--                </select>-->
-                <br>
-                <div class="showRadioField" ng-hide="radioBtn" name="radioBtn">
-                <button (click)="addRadio()">Add Radio</button>
-                </div>
-<!--                <div class="showInputField" ng-hide="radioBtn" name="inputField">-->
-                    <div>
-<!--                        <input type="radio">-->
-                    <button (click)="addInput()">Add Input</button>
-                </div>
 
-
-
-<!--                <div class="showTextareaField" ng-hide="radioBtn" name="inputField" [(ngModel)]="textarea">-->
-                    {{textarea}}
-                <div>
-                    <button (click)="addTextarea()">Add Textarea</button>
-
-                </div>
-
-            </div>
-
-            <button (click)="savePrompt(createPrompt)">Save</button>
+            <button (click)="savePrompt(stageForm)">Save</button>
 
             <br>
         </form>

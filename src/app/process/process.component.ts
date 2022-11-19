@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProcessService} from "../process.service";
 import {IProcess} from "../interfaces/IProcess";
-import {NgForm} from "@angular/forms";
+import {FormGroup, NgForm} from "@angular/forms";
 import {PromptService} from "../prompt.service";
 import {ITitle} from "../interfaces/ITitle";
 import {IPrompt} from "../interfaces/IPrompt";
@@ -13,7 +13,8 @@ import {IPrompt} from "../interfaces/IPrompt";
 })
 export class ProcessComponent implements OnInit {
 
-
+  title = "stageForm"
+  stageForm!: FormGroup;
 
     // public people: IProcess =  [{
     //   "iD": iD,
@@ -29,7 +30,22 @@ export class ProcessComponent implements OnInit {
               private promptService: PromptService) { }
 
   ngOnInit(): void {
+    this.stageForm = new FormGroup({
+      stageTitle: new FormGroup(null),
+      startDate: new FormGroup(null),
+      endDate: new FormGroup(null),
+      description: new FormGroup(null),
+      process: new FormGroup(null),
+      prompt: new FormGroup(null),
+      prompt2: new FormGroup(null)
+
+    });
   }
+
+  //   this.stageForm = new FormGroup<IProcess>()
+  // }
+  prompt: String ="";
+  prompt2: String ="";
 
   CreatePrompt() {
     console.log("creating prompt")
@@ -81,11 +97,15 @@ export class ProcessComponent implements OnInit {
     document.querySelector('.showTextareaField').appendChild(row);
   }
 
-  savePrompt(createPrompt: NgForm) {
+  savePrompt(createPrompt: FormGroup) {
     console.log("saving")
     console.log(createPrompt)
     this.promptService.createPrompt(
         createPrompt.value as IPrompt)
+
+  }
+
+  addMultiple() {
 
   }
 }
