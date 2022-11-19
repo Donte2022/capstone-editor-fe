@@ -11,30 +11,19 @@ import {IProcess} from "../interfaces/IProcess";
 })
 export class UpdateComponent implements OnInit {
 
-
-
     // @ts-ignore
-    updatedStage = {id: "", stageTitle: "", endDate: "", startDate: "", description: ""};
-
-
-
+    updatedStage = {
+        id: "",
+        stageTitle: "",
+        endDate: "",
+        startDate: "",
+        description: ""};
 
   constructor(private httpService: HttpService,
               private processService: ProcessService) {
-
     // @ts-ignore
       this.updatedStage = this.processService.newStage;
   }
-
-
-      // {
-      //   id:"",
-      //   startDate: "",
-      //   endDate: "",
-      //   title: "",
-      //   description: "",
-      //   // prompt: "",
-      // };
 
   ngOnInit(): void {
   }
@@ -48,13 +37,14 @@ export class UpdateComponent implements OnInit {
 
     }
 
-    addProcess(value: any) {
-        
-    }
-
     submitUpdateStage(updatedStageData: IProcess) {
       console.log("sending update")
         console.log(updatedStageData)
+        this.processService.$isCreatingProcess.next(false);
+        this.processService.$isUpdating.next(false);
+        this.processService.$isViewingMain.next(true);
+        this.processService.$isCreatingStage.next(false);
+        this.processService.$isCreatingTitle.next(false);
         this.processService.updateStage(updatedStageData);
 
     }

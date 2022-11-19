@@ -49,6 +49,7 @@ export class TitleComponent implements OnInit {
 
     createStage(newStage: NgForm) {
     console.log(newStage)
+    console.log("saving info")
       this.processService.$isCreatingProcess.next(false);
       this.processService.$isUpdating.next(false);
       this.processService.$isViewingMain.next(true);

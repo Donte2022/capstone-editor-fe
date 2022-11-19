@@ -1,5 +1,35 @@
+
+<nav class="navbar navbar-light bg-success">
+    <div>
+        <h1>Process Manager</h1>
+    </div>
+</nav>
+
 <h2>Main Menu</h2>
 <br>
+<div>
+    <div class="text-danger">
+        {{deleteFailMessage}}
+    </div>
+
+    <div class="text-success">
+        {{deleteSuccessMessage}}
+    </div>
+    <div class="text-danger">
+        {{createFailMessage}}
+    </div>
+
+    <div class="text-success">
+        {{createSuccessMessage}}
+    </div>
+    <div class="text-danger">
+        {{updateFailMessage}}
+    </div>
+
+    <div class="text-success">
+        {{updateSuccessMessage}}
+    </div>
+</div>
 <app-process-display></app-process-display>
 <br>
 <!--<app-new-stage></app-new-stage>-->

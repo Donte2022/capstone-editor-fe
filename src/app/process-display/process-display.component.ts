@@ -76,6 +76,5 @@ export class ProcessDisplayComponent implements OnInit {
     // @ts-ignore
     this.processService.updateThisStage(displayInfo);
     console.log(displayInfo)
-
   }
 }

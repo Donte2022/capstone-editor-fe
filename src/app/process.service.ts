@@ -10,10 +10,15 @@ import {IProcess} from "./interfaces/IProcess";
 })
 export class ProcessService {
 
+
+  $createThisStageError = new BehaviorSubject<string | null>(null);
+  private createStageError = "Stage fail to create. Please try again later"
+  $createThisStageSuccess = new BehaviorSubject<string | null>(null);
+  private creatStageSuccess = "Stage created!"
   $deleteThisStageError = new BehaviorSubject<string | null>(null);
+  private deleteStageFail = "Stage fail to delete. Please try again later";
   $deleteThisStageSuccess = new BehaviorSubject<string | null>(null);
-  private deleteIdSuccess = "Stage fail to delete. Please try again later";
-  private deleteStageFail = "Stage successfully deleted!";
+  private deleteStageSuccess = "Stage successfully deleted!";
   $updateThisStageSuccess = new BehaviorSubject<string | null>(null);
   private updateStageSuccess = "Update was successful!";
   $updateThisStageError = new BehaviorSubject<string | null>(null);
@@ -36,9 +41,6 @@ export class ProcessService {
   constructor(private httpService: HttpService) {
   }
 
-  // getTitle() {
-  //   this.httpService.getTitles()
-  // }
 
   deleteStage(id: number) {
 
@@ -46,7 +48,7 @@ export class ProcessService {
         .pipe(first()).subscribe({
       next: (deleteThisStageSuccess) => {
         console.log(id)
-        this.$deleteThisStageSuccess.next(this.deleteIdSuccess)
+        this.$deleteThisStageSuccess.next(this.deleteStageSuccess)
       },
       error: (deleteThisStageError) => {
         console.log(deleteThisStageError)
@@ -94,11 +96,13 @@ export class ProcessService {
 
         console.log("Title was Created!")
         console.log(stage)
+        this.$createThisStageSuccess.next(this.creatStageSuccess)
       },
         error: (error) => {
 
         console.log("Fail to create!")
           console.log(error)
+          this.$createThisStageError.next(this.createStageError)
         },
       });
     }
