@@ -8,7 +8,7 @@
 
 <!--            {{createPrompt| json}}-->
 
-            <div><h4>Title: </h4> </div>
+            <div><h4>Stage Title: </h4> </div>
 <!--            {{something.title}}-->
 
 <!--            <div class="input-group mb-3">-->
@@ -41,57 +41,57 @@
                     </div>
                 </div>
                 <br>
-                <div>
-                    <span class="input-group-text" id="basic-addon4">Prompt text #1: </span>
-                    <input formControlName="prompt" [(ngModel)]="prompt" class="form-control" aria-label="Prompt" type="text">
-                    <div class="m-1">
-                        <input type="radio" >{{prompt}}
-                    </div>
-                </div>
-                <div>
+<!--                <div>-->
+<!--                    <span class="input-group-text" id="basic-addon4">Prompt text #1: </span>-->
+<!--                    <input formControlName="prompt" ng-show="radioBtn" [(ngModel)]="prompt" class="form-control" aria-label="Prompt" type="text">-->
+<!--                    <div class="m-1">-->
+<!--                        <input type="radio" >{{prompt}}-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div>-->
 
-                    <span class="input-group-text" id="basic-addon6">Prompt text #2: </span>
-                    <input formControlName="prompt2" [(ngModel)]="prompt2" class="form-control" aria-label="Prompt" type="text">
-                    <div class="m-1">
-                        <input type="radio" >{{prompt}}
-                    </div>
-                </div>
-            </div>
-            <br><br>
-            <div class="input-group mb-3" name="multipleQuestion">
-                <!--                <span class="input-group-text" id="basic-addon2">Prompt Title: </span>-->
-                <br>
-                <div>
-                    <span class="input-group-text" id="basic-addon7">Prompt text #1: </span>
-                    <input formControlName="prompt" [(ngModel)]="prompt" class="form-control" aria-label="Prompt" type="text">
-                    <div class="m-1">
-                        <input type="radio" >{{prompt}}
-                    </div>
-                </div>
-                <div>
+<!--                    <span class="input-group-text" id="basic-addon6">Prompt text #2: </span>-->
+<!--                    <input formControlName="prompt2" [(ngModel)]="prompt2" class="form-control" aria-label="Prompt" type="text">-->
+<!--                    <div class="m-1">-->
+<!--                        <input type="radio" >{{prompt}}-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <br><br>-->
+<!--            <div class="input-group mb-3" name="multipleQuestion">-->
+<!--                &lt;!&ndash;                <span class="input-group-text" id="basic-addon2">Prompt Title: </span>&ndash;&gt;-->
+<!--                <br>-->
+<!--                <div>-->
+<!--                    <span class="input-group-text" id="basic-addon7">Prompt text #1: </span>-->
+<!--                    <input formControlName="prompt" [(ngModel)]="prompt" class="form-control" aria-label="Prompt" type="text">-->
+<!--                    <div class="m-1">-->
+<!--                        <input type="radio" >{{prompt}}-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div>-->
 
-                    <span class="input-group-text" id="basic-addon8">Prompt text #2: </span>
-                    <input formControlName="prompt2" [(ngModel)]="prompt2" class="form-control" aria-label="Prompt" type="text">
-                    <div class="m-1">
-                        <input type="radio" >{{prompt}}
-                    </div>
-                </div>
-                <div>
-                    <span class="input-group-text" id="basic-addon9">Prompt text #3: </span>
-                    <input formControlName="prompt" [(ngModel)]="prompt" class="form-control" aria-label="Prompt" type="text">
-                    <div class="m-1">
-                        <input type="radio" >{{prompt}}
-                    </div>
-                </div>
-                <div>
+<!--                    <span class="input-group-text" id="basic-addon8">Prompt text #2: </span>-->
+<!--                    <input formControlName="prompt2" [(ngModel)]="prompt2" class="form-control" aria-label="Prompt" type="text">-->
+<!--                    <div class="m-1">-->
+<!--                        <input type="radio" >{{prompt}}-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <span class="input-group-text" id="basic-addon9">Prompt text #3: </span>-->
+<!--                    <input formControlName="prompt" [(ngModel)]="prompt" class="form-control" aria-label="Prompt" type="text">-->
+<!--                    <div class="m-1">-->
+<!--                        <input type="radio" >{{prompt}}-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div>-->
 
-                    <span class="input-group-text" id="basic-addon10">Prompt text #4: </span>
-                    <input formControlName="prompt2" [(ngModel)]="prompt2" class="form-control" aria-label="Prompt" type="text">
-                    <div class="m-1">
-                        <input type="radio" >{{prompt}}
-                    </div>
-                </div>
-            </div>
+<!--                    <span class="input-group-text" id="basic-addon10">Prompt text #4: </span>-->
+<!--                    <input formControlName="prompt2" [(ngModel)]="prompt2" class="form-control" aria-label="Prompt" type="text">-->
+<!--                    <div class="m-1">-->
+<!--                        <input type="radio" >{{prompt}}-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
             <br>
 <!--            <div class="input-group mb-3">-->
 <!--                <span class="input-group-text" id="basic-addon2"> Select type: </span>-->
@@ -100,7 +100,7 @@
 <!--&lt;!&ndash;                <input type="input"> Input Field&ndash;&gt;-->
 <!--&lt;!&ndash;                <input type="checkbox"> Checkbox&ndash;&gt;-->
 <!--&lt;!&ndash;                <textarea></textarea> Textarea&ndash;&gt;-->
-<!--            </div>-->
+            </div>
 
             <button (click)="savePrompt(stageForm)">Save</button>
 
@@ -109,8 +109,11 @@
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
 <!--        <button (click)="CreateProcess()" class="btn btn-success">Back</button>-->
-        <button (click)="Cancel()" class="btn btn-danger" type="button">Cancel</button>
+        <button (click)="Cancel()" class="btn btn-warning" type="button">Cancel</button>
         <button (click)="CreatePrompt()" class="btn btn-primary" type="button">Create new prompt</button>
+        <button (click)="deleteProcess()" class="btn btn-danger" type="button">Delete Process</button>
+        <button (click)="updateProcess()" class="btn btn-primary" type="button">Update Process</button>
+
     </div>
 </div>
 

@@ -1,24 +1,28 @@
 
-<div *ngIf ="!isCreatingStage && !isCreatingTitle && !isCreatingProcess && !isUpdating && isViewingMain">
+<div *ngIf ="!isCreatingStage && !isCreatingTitle && !isCreatingProcess && !isUpdating && isViewingMain && !isManagingProcess">
     <app-main></app-main>
 </div>
 
-    <div *ngIf ="!isCreatingStage && !isCreatingProcess && !isViewingMain && !isUpdating && isCreatingTitle">
+    <div *ngIf ="!isCreatingStage && !isCreatingProcess && !isViewingMain && !isUpdating && isCreatingTitle && !isManagingProcess">
 <app-title></app-title>
     </div>
 
-<div *ngIf ="!isCreatingStage && !isCreatingTitle && !isViewingMain && !isUpdating && isCreatingProcess">
+<div *ngIf ="!isCreatingStage && !isCreatingTitle && !isViewingMain && !isUpdating && isCreatingProcess && !isManagingProcess">
     <app-process></app-process>
 </div>
 
-<div *ngIf = "!isCreatingStage && !isCreatingTitle && !isViewingMain && !isUpdating && !isCreatingProcess && !isReviewing">
+<div *ngIf = "!isCreatingStage && !isCreatingTitle && !isViewingMain && !isUpdating && !isCreatingProcess && !isReviewing && !isManagingProcess">
     <app-summary></app-summary>
 </div>
 
-<div *ngIf = "!isCreatingStage && !isCreatingTitle && !isViewingMain &&!isCreatingProcess && !isUpdating && isReviewing">
+<div *ngIf = "!isCreatingStage && !isCreatingTitle && !isViewingMain &&!isCreatingProcess && !isUpdating && isReviewing && !isManagingProcess">
     <app-results></app-results>
 </div>
 
-<div *ngIf = "!isCreatingStage && !isCreatingTitle && !isViewingMain &&!isCreatingProcess && !isReviewing && isUpdating">
+<div *ngIf = "!isCreatingStage && !isCreatingTitle && !isViewingMain &&!isCreatingProcess && !isReviewing && isUpdating && !isManagingProcess">
     <app-update></app-update>
+</div>
+
+<div *ngIf = "!isCreatingStage && !isCreatingTitle && !isViewingMain && !isCreatingProcess && !isReviewing && !isUpdating && isManagingProcess">
+   <app-prompt></app-prompt>
 </div>

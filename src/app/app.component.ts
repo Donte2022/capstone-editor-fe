@@ -15,6 +15,7 @@ export class AppComponent {
   isViewingMain: boolean = true;
   isUpdating: boolean = false;
   isReviewing: boolean = false;
+  isManagingProcess: boolean = false;
 
 
   constructor(private processService: ProcessService) {
@@ -47,6 +48,11 @@ export class AppComponent {
       this.processService.$isReviewing.subscribe(
           isReviewing => {
               this.isReviewing = isReviewing;
+          });
+
+      this.processService.$isManagingProcess.subscribe(
+          isManagingProcess => {
+              this.isManagingProcess = isManagingProcess;
           });
 
 

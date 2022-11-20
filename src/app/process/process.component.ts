@@ -150,4 +150,12 @@ export class ProcessComponent implements OnInit {
     document.querySelector('.showMultiField').appendChild(row);
   }
 
+  deleteProcess() {
+    console.log("deleting")
+
+  }
+
+  updateProcess() {
+
+  }
 }

@@ -57,13 +57,16 @@ export class ProcessDisplayComponent implements OnInit {
 
   }
 
-  addProcess() {
-    console.log("adding process")
-    this.processService.$isCreatingProcess.next(true);
+  manageProcess() {
+    console.log("Managing process")
+    this.processService.$isCreatingProcess.next(false);
     this.processService.$isUpdating.next(false);
     this.processService.$isViewingMain.next(false);
     this.processService.$isCreatingStage.next(false);
     this.processService.$isCreatingTitle.next(false);
+    this.processService.$isManagingProcess.next(true);
+
+
   }
 
   editStage(displayInfo: IProcess) {
