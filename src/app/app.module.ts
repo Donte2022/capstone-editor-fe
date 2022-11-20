@@ -10,9 +10,10 @@ import { MainComponent } from './main/main.component';
 import { TitleComponent } from './title/title.component';
 import { SummaryComponent } from './summary/summary.component';
 import { ResultsComponent } from './results/results.component';
-import { UpdateComponent } from './update/update.component';
+import { UpdateComponent } from './updateStage/update.component';
 import { NewStageComponent } from './new-stage/new-stage.component';
 import { PromptComponent } from './prompt/prompt.component';
+import { UpdatePromptComponent } from './update-prompt/update-prompt.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PromptComponent } from './prompt/prompt.component';
     ResultsComponent,
     UpdateComponent,
     NewStageComponent,
-    PromptComponent
+    PromptComponent,
+    UpdatePromptComponent
   ],
   imports: [
     BrowserModule,

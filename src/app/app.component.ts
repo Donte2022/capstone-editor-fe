@@ -16,6 +16,7 @@ export class AppComponent {
   isUpdating: boolean = false;
   isReviewing: boolean = false;
   isManagingProcess: boolean = false;
+  isUpdatingPrompt: boolean = false;
 
 
   constructor(private processService: ProcessService) {
@@ -53,6 +54,11 @@ export class AppComponent {
       this.processService.$isManagingProcess.subscribe(
           isManagingProcess => {
               this.isManagingProcess = isManagingProcess;
+          });
+
+      this.processService.$isUpdatingPrompt.subscribe(
+          isUpdatingPrompt => {
+              this.isUpdatingPrompt = isUpdatingPrompt;
           });
 
 

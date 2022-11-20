@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-light bg-success">
     <div>
-        <h1>Process Manager</h1>
+        <h1>Main</h1>
     </div>
 </nav>
 
@@ -29,19 +29,12 @@
     </div>
 </div>
 
-<h2>Main Menu</h2>
 <br>
-<div class="text-success">
-    Successfully created stage!
-</div>
-
-<div class="text-danger">
-    Fail to create Stage.
-</div>
 <app-process-display></app-process-display>
 <br>
 <!--<app-new-stage></app-new-stage>-->
 <br><br>
 <div class="d-grid gap-2 d-md-flex justify-content-md-start m-5">
     <button (click)="createStage()" class="btn btn-success">New Stage</button>
+    <button (click)="exitApp()" class="btn btn-primary">Exit</button>
 </div>

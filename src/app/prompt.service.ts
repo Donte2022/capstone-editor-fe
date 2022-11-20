@@ -11,9 +11,19 @@ export class PromptService {
 
   $deleteThisStageSuccess = new BehaviorSubject<string | null>(null);
   private deleteStageSuccess = "Prompt deleted successfully"
-
   $deleteThisStageError = new BehaviorSubject<string | null>(null);
   private deleteStageFail = "Prompt fail to delete"
+  $updateThisPromptSuccess = new BehaviorSubject<string | null>(null);
+  private updatePromptSuccess = "Prompt deleted successfully"
+  $updateThisPromptError = new BehaviorSubject<string | null>(null);
+  private updatePromptFail = "Prompt fail to delete"
+
+  editPrompt: string = "";
+
+  oldPromptData(displayInfo: any) {
+    console.log(displayInfo)
+    this.editPrompt = displayInfo;
+  }
 
   constructor(private httpService: HttpService) {
 
@@ -36,7 +46,7 @@ export class PromptService {
 
   // newStage: string = "";
   //
-  // updateThisStage(displayInfo: any) {
+  // updateThisPrompt(displayInfo: any) {
   //   console.log(displayInfo)
   //   this.newStage = displayInfo;
   // }
@@ -44,9 +54,7 @@ export class PromptService {
   // constructor(private httpService: HttpService) {
   // }
   //
-  // getTitle() {
-  //   this.httpService.getTitles()
-  // }
+
   //
   // deleteStage(id: number) {
   //
@@ -63,20 +71,20 @@ export class PromptService {
   //   })
   // }
   //
-  // updateStage(updatePrompt: ITitle) {
-  //   this.httpService.updateStage(updateThisStage)
-  //       .pipe(first()).subscribe({
-  //     next: (updateThisStageSuccess) => {
-  //       console.log(updateThisStage)
-  //       this.$updateThisStageSuccess.next(this.updateStageSuccess)
-  //     },
-  //     error: (updateThisStageError) => {
-  //       console.log(updateThisStageError)
-  //       this.$updateThisStageError.next(this.updateStageFail)
-  //     }
-  //   })
-  // }
-  //
+
+  updatePrompt(updateThisPrompt: IPrompt) {
+    this.httpService.updatePrompt(updateThisPrompt)
+        .pipe(first()).subscribe({
+      next: (updateThisPromptSuccess) => {
+        console.log(updateThisPromptSuccess)
+        this.$updateThisPromptSuccess.next(this.updatePromptSuccess)
+      },
+      error: (updateThisStageError) => {
+        console.log(updateThisStageError)
+        this.$updateThisPromptError.next(this.updatePromptFail)
+      }
+    })
+  }
 
   createPrompt(createPrompt: IPrompt) {
 

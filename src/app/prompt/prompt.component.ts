@@ -19,12 +19,25 @@ export class PromptComponent implements OnInit {
 
   deletePromptErrorMessage: string | null = null;
   deletePromptSuccessMessage: string | null = null;
+  updatePromptErrorMessage: string | null = null;
+  updatePromptSuccessMessage: string | null = null;
+
+  updatedPrompt = {
+
+    id: "",
+    idOfTitle: "",
+    process: "",
+    prompt: "" };
+
 
   onDestroy = new Subject();
 
 
   constructor(private httpService: HttpService,
-              private promptService: PromptService) {
+              private promptService: PromptService,
+              private processService: ProcessService) {
+
+    // this.updatedPrompt = this.promptService.editPrompt;
 
     this.promptService.$deleteThisStageError.pipe(takeUntil(this.onDestroy)).subscribe(
         deletePromptErrorMessage => this.deletePromptErrorMessage = deletePromptErrorMessage);
@@ -32,11 +45,12 @@ export class PromptComponent implements OnInit {
     this.promptService.$deleteThisStageSuccess.pipe(takeUntil(this.onDestroy)).subscribe(
         deletePromptSuccessMessage => this.deletePromptSuccessMessage = deletePromptSuccessMessage);
 
-    // this.promptService.$updateThisStageSuccess.pipe(takeUntil(this.onDestroy)).subscribe(
-    //     deleteIdSuccess => this.updateSuccessMessage = deleteIdSuccess);
-    //
-    // this.promptService.$updateThisStageSuccess.pipe(takeUntil(this.onDestroy)).subscribe(
-    //     deleteIdSuccess => this.updateSuccessMessage = deleteIdSuccess);
+    this.promptService.$updateThisPromptError.pipe(takeUntil(this.onDestroy)).subscribe(
+        updatePromptErrorMessage => this.updatePromptErrorMessage = updatePromptErrorMessage);
+
+    this.promptService.$updateThisPromptSuccess.pipe(takeUntil(this.onDestroy)).subscribe(
+        updatePromptSuccessMessage => this.updatePromptSuccessMessage = updatePromptSuccessMessage);
+
 
 
     this.httpService.getPrompt()
@@ -79,5 +93,20 @@ export class PromptComponent implements OnInit {
   ngOnDestroy(): void{
     this.onDestroy.next(null);
     this.onDestroy.complete();
+  }
+
+  updatePrompt(promptInfo: IPrompt) {
+    this.processService.$isCreatingProcess.next(false);
+    this.processService.$isUpdating.next(false);
+    this.processService.$isViewingMain.next(false);
+    this.processService.$isCreatingStage.next(false);
+    this.processService.$isCreatingTitle.next(false);
+    this.processService.$isUpdatingPrompt.next(true);
+    this.processService.$isReviewing.next(false);
+    this.processService.$isManagingProcess.next(false);
+    console.log("updating selected prompt")
+    // this.promptService.updatePrompt(promptInfo);
+    this.promptService.oldPromptData(promptInfo);
+
   }
 }

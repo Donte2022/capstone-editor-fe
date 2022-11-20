@@ -11,7 +11,7 @@
     <app-process></app-process>
 </div>
 
-<div *ngIf = "!isCreatingStage && !isCreatingTitle && !isViewingMain && !isUpdating && !isCreatingProcess && !isReviewing && !isManagingProcess">
+<div *ngIf = "!isCreatingStage && !isCreatingTitle && !isViewingMain && !isUpdating && !isCreatingProcess && !isReviewing && !isManagingProcess && !isUpdatingPrompt">
     <app-summary></app-summary>
 </div>
 
@@ -19,10 +19,18 @@
     <app-results></app-results>
 </div>
 
-<div *ngIf = "!isCreatingStage && !isCreatingTitle && !isViewingMain &&!isCreatingProcess && !isReviewing && isUpdating && !isManagingProcess">
+<div *ngIf = "!isCreatingStage && !isCreatingTitle && !isViewingMain &&!isCreatingProcess && !isReviewing && isUpdating && !isManagingProcess && !isUpdatingPrompt">
     <app-update></app-update>
 </div>
 
 <div *ngIf = "!isCreatingStage && !isCreatingTitle && !isViewingMain && !isCreatingProcess && !isReviewing && !isUpdating && isManagingProcess">
    <app-prompt></app-prompt>
+</div>
+
+<div *ngIf = "!isCreatingStage && !isCreatingTitle && isViewingMain && !isCreatingProcess && !isReviewing && !isUpdating && isManagingProcess">
+    <app-prompt></app-prompt>
+</div>
+
+<div *ngIf = "!isCreatingStage && !isCreatingTitle && !isViewingMain && !isCreatingProcess && !isReviewing && !isUpdating && !isManagingProcess && isUpdatingPrompt">
+    <app-update-prompt></app-update-prompt>
 </div>

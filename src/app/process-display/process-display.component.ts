@@ -4,6 +4,7 @@ import {first} from "rxjs";
 import {IProcess} from "../interfaces/IProcess";
 import {ProcessService} from "../process.service";
 import {ITitle} from "../interfaces/ITitle";
+import {PromptService} from "../prompt.service";
 
 @Component({
   selector: 'app-process-display',

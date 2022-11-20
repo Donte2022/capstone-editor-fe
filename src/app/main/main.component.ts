@@ -19,8 +19,7 @@ export class MainComponent implements OnInit {
 
   onDestroy = new Subject();
 
-  constructor(private processService: ProcessService,
-              private promptService: PromptService) {
+  constructor(private processService: ProcessService) {
 
     this.processService.$createThisStageError.pipe(takeUntil(this.onDestroy)).subscribe(
         createFailMessage => this.createFailMessage = createFailMessage);
@@ -61,4 +60,13 @@ export class MainComponent implements OnInit {
       this.processService.$isCreatingTitle.next(true);
 
     }
+
+  exitApp() {
+    this.processService.$isCreatingProcess.next(false);
+    this.processService.$isUpdating.next(false);
+    this.processService.$isViewingMain.next(false);
+    this.processService.$isCreatingStage.next(false);
+    this.processService.$isCreatingTitle.next(false);
+    this.processService.$isReviewing.next(false);
+  }
 }

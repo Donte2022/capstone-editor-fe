@@ -64,6 +64,7 @@ export class HttpService {
           "http://localhost:8080/api/prompt" + `${updatePrompt}`,
           {
                     "idOfTitle": updatePrompt.idOfTitle,
+                    "process": updatePrompt.process,
                   "prompt": updatePrompt.prompt
           }
       ) as Observable<IPrompt>

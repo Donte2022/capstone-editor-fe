@@ -1,4 +1,4 @@
-<p> Process Created</p>
+<h2> Process Management</h2>
 
 <div>
     <div class="text-danger">
@@ -8,44 +8,53 @@
     <div class="text-success">
         {{deletePromptSuccessMessage}}
     </div>
-<!--    <div class="text-danger">-->
-<!--        {{updateProptErrorMessage}}-->
-<!--    </div>-->
+    <div class="text-danger">
+        {{updatePromptErrorMessage}}
+    </div>
 
-<!--    <div class="text-success">-->
-<!--        {{updatePromptErrorMessage}}-->
-<!--    </div>-->
+    <div class="text-success">
+        {{updatePromptSuccessMessage}}
+    </div>
 
 </div>
     <br>
     <div *ngFor="let displayInfo of latestStageList">
         <div>
 
-            {{displayInfo| json}}
-
             <div><b> ID: </b>{{displayInfo.id}}</div>
 
             <div><b> Stage Title: </b>{{displayInfo.stageTitle}} </div>
 
-<!--            <div><b> Prompt: </b>{{displayInfo.prompt | date}} </div>-->
+            <div><b> Start Date: </b>{{displayInfo.startDate | date}} </div>
+
+            <div><b> End Date: </b>{{displayInfo.endDate | date}} </div>
+
+            <div><b> Description: </b>{{displayInfo.description}} </div>
+
+
+            <!--            <div><b> Prompt: </b>{{displayInfo.prompt | date}} </div>-->
 
         </div>
     </div>
+    <br><br>
     <div *ngFor="let promptInfo of latestPromptList">
         <div>
 
-<!--        {{displayInfo| json}}-->
 
-<!--        <div><b> ID: </b>{{displayInfo.id}}</div>-->
+        <div><b> ID: </b>{{promptInfo.id}}</div>
 
-        <div><b> Process Title: </b>{{promptInfo.process}} </div>
+            <div><b> Process Title: </b>{{promptInfo.idOfTitle}} </div>
+
+
+            <div><b> Process Title: </b>{{promptInfo.process}} </div>
 
         <div><b> Prompt: </b>{{promptInfo.prompt}} </div>
 
         </div>
 
     <div>
-        <button (click)="deletePrompt(promptInfo.id)">Delete Prompt</button>
+        <button (click)="deletePrompt(promptInfo.id)">Delete</button>
+        <button (click)="updatePrompt(promptInfo)">Update</button>
     </div> </div>
 <div>
     <app-process></app-process>

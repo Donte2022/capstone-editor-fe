@@ -60,11 +60,13 @@ export class ProcessComponent implements OnInit {
 
   Cancel() {
     console.log("cancel Prompt")
+    console.log("going back to process management page")
     this.processService.$isCreatingProcess.next(false);
     this.processService.$isUpdating.next(false);
     this.processService.$isViewingMain.next(true);
     this.processService.$isCreatingStage.next(false);
     this.processService.$isCreatingTitle.next(false);
+    this.processService.$isManagingProcess.next(true);
 
   }
 
@@ -156,7 +158,10 @@ export class ProcessComponent implements OnInit {
 
   }
 
-  updateProcess() {
-
-  }
+  // updateProcess() {
+  //   console.log("updating prompt")
+  //   console.log(updateThisPropmt)
+  //   this.
+  //
+  // }
 }

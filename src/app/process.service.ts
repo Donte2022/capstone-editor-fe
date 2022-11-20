@@ -31,6 +31,7 @@ export class ProcessService {
   $isUpdating = new BehaviorSubject<boolean>(false);
   $isReviewing = new BehaviorSubject<boolean>(false);
   $isManagingProcess = new BehaviorSubject<boolean>(false);
+  $isUpdatingPrompt = new BehaviorSubject<boolean>(false);
 
    newStage: string = "";
 
