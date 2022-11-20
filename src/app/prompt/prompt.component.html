@@ -1,4 +1,52 @@
 <p> Process Created</p>
+
+<div>
+    <div class="text-danger">
+        {{deletePromptErrorMessage}}
+    </div>
+
+    <div class="text-success">
+        {{deletePromptSuccessMessage}}
+    </div>
+<!--    <div class="text-danger">-->
+<!--        {{updateProptErrorMessage}}-->
+<!--    </div>-->
+
+<!--    <div class="text-success">-->
+<!--        {{updatePromptErrorMessage}}-->
+<!--    </div>-->
+
+</div>
+    <br>
+    <div *ngFor="let displayInfo of latestStageList">
+        <div>
+
+            {{displayInfo| json}}
+
+            <div><b> ID: </b>{{displayInfo.id}}</div>
+
+            <div><b> Stage Title: </b>{{displayInfo.stageTitle}} </div>
+
+<!--            <div><b> Prompt: </b>{{displayInfo.prompt | date}} </div>-->
+
+        </div>
+    </div>
+    <div *ngFor="let promptInfo of latestPromptList">
+        <div>
+
+<!--        {{displayInfo| json}}-->
+
+<!--        <div><b> ID: </b>{{displayInfo.id}}</div>-->
+
+        <div><b> Process Title: </b>{{promptInfo.process}} </div>
+
+        <div><b> Prompt: </b>{{promptInfo.prompt}} </div>
+
+        </div>
+
+    <div>
+        <button (click)="deletePrompt(promptInfo.id)">Delete Prompt</button>
+    </div> </div>
 <div>
     <app-process></app-process>
 </div>

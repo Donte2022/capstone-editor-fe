@@ -46,6 +46,7 @@ export class ProcessComponent implements OnInit {
   // }
   prompt: String ="";
   prompt2: String ="";
+  prompt3: String ="";
 
   CreatePrompt() {
     console.log("creating prompt")
@@ -151,7 +152,7 @@ export class ProcessComponent implements OnInit {
   }
 
   deleteProcess() {
-    console.log("deleting")
+    console.log("deleting something")
 
   }
 

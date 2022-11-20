@@ -71,7 +71,7 @@ export class HttpService {
 
     deletePrompt(id:number) {
       return this.httpClient.delete(
-          "http://localhost:8080/api/prompt" + id,
+          "http://localhost:8080/api/prompt/" + id,
       ) as Observable<IPrompt>;
     }
 
@@ -85,6 +85,12 @@ export class HttpService {
       return this.httpClient.get(
           "http://localhost:8080/api/stage/all"
       ) as Observable<IStage>;
+    }
+
+    getPrompt() {
+        return this.httpClient.get(
+            "http://localhost:8080/api/prompt/all"
+        ) as Observable<IPrompt>;
     }
 }
 

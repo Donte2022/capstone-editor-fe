@@ -29,19 +29,19 @@
             <div class="input-group mb-3" name="trueOrFalse">
 <!--                <span class="input-group-text" id="basic-addon2">Prompt Title: </span>-->
                 <br>
-                <div>
-                    <span class="input-group-text" id="basic-addon3"> Select Response type: </span>
-                    <br>
-                    <div class="showRadioField" ng-hide="radioBtn" name="radioBtn">
-                        <button (click)="addRadio()"> True or False</button>
-                    </div>
-                    <!--                <div class="showInputField" ng-hide="radioBtn" name="inputField">-->
-                    <div class="showMultiField" ng-hide="radioBtn" name="radioBtn">
-                        <button (click)="addMultiple()">Multiple Choice</button>
-                    </div>
-                </div>
+<!--                <div>-->
+<!--                    <span class="input-group-text" id="basic-addon3"> Select Response type: </span>-->
+<!--                    <br>-->
+<!--                    <div class="showRadioField" ng-hide="radioBtn" name="radioBtn">-->
+<!--                        <button (click)="addRadio()"> True or False</button>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash;                <div class="showInputField" ng-hide="radioBtn" name="inputField">&ndash;&gt;-->
+<!--                    <div class="showMultiField" ng-hide="radioBtn" name="radioBtn">-->
+<!--                        <button (click)="addMultiple()">Multiple Choice</button>-->
+<!--                    </div>-->
+<!--                </div>-->
                 <br>
-                <div name="process" ngModel class="form-control">
+                <div >
                 <div>
                     <span class="input-group-text" id="basic-addon4">Prompt text #1: </span>
                     <input name="prompt" ng-show="radioBtn" [(ngModel)]="prompt" class="form-control" aria-label="Prompt" type="text">
@@ -52,11 +52,19 @@
                 <div>
 
                     <span class="input-group-text" id="basic-addon6">Prompt text #2: </span>
-                    <input name="prompt2" [(ngModel)]="prompt2" class="form-control" aria-label="Prompt" type="text">
+                    <input name="prompt" [(ngModel)]="prompt2" class="form-control" aria-label="Prompt" type="text">
                     <div class="m-1">
                         <input type="radio" >{{prompt2}}
                     </div>
                 </div>
+                    <div>
+
+                        <span class="input-group-text" id="basic-addon7">Prompt text #2: </span>
+                        <input name="prompt" [(ngModel)]="prompt3" class="form-control" aria-label="Prompt" type="text">
+                        <div class="m-1">
+                            <input type="radio" >{{prompt3}}
+                        </div>
+                    </div>
             </div>
             </div>
             <br><br>

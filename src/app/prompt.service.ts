@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpService} from "./http.service";
-import {first} from "rxjs";
+import {BehaviorSubject, first} from "rxjs";
 import {ITitle} from "./interfaces/ITitle";
 import {IPrompt} from "./interfaces/IPrompt";
 
@@ -9,11 +9,29 @@ import {IPrompt} from "./interfaces/IPrompt";
 })
 export class PromptService {
 
+  $deleteThisStageSuccess = new BehaviorSubject<string | null>(null);
+  private deleteStageSuccess = "Prompt deleted successfully"
 
-
+  $deleteThisStageError = new BehaviorSubject<string | null>(null);
+  private deleteStageFail = "Prompt fail to delete"
 
   constructor(private httpService: HttpService) {
 
+  }
+
+  deletePrompt(id: number) {
+
+    this.httpService.deletePrompt(id)
+        .pipe(first()).subscribe({
+      next: (deleteThisStageSuccess) => {
+        console.log(id)
+        this.$deleteThisStageSuccess.next(this.deleteStageSuccess)
+      },
+      error: (deleteThisStageError) => {
+        console.log(deleteThisStageError)
+        this.$deleteThisStageError.next(this.deleteStageFail)
+      }
+    })
   }
 
   // newStage: string = "";
