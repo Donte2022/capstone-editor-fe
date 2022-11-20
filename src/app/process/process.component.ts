@@ -14,7 +14,7 @@ import {IPrompt} from "../interfaces/IPrompt";
 export class ProcessComponent implements OnInit {
 
   title = "stageForm"
-  stageForm!: FormGroup;
+  // stageForm!: FormGroup;
 
     // public people: IProcess =  [{
     //   "iD": iD,
@@ -24,22 +24,22 @@ export class ProcessComponent implements OnInit {
     //   "prompt": prompt
     // }
     // ];
-    public textarea = {};
+    // public textarea = {};
 
   constructor(private processService: ProcessService,
               private promptService: PromptService) { }
 
   ngOnInit(): void {
-    this.stageForm = new FormGroup({
-      stageTitle: new FormGroup(null),
-      startDate: new FormGroup(null),
-      endDate: new FormGroup(null),
-      description: new FormGroup(null),
-      process: new FormGroup(null),
-      prompt: new FormGroup(null),
-      prompt2: new FormGroup(null)
-
-    });
+    // this.stageForm = new FormGroup({
+    //   stageTitle: new FormGroup(null),
+    //   startDate: new FormGroup(null),
+    //   endDate: new FormGroup(null),
+    //   description: new FormGroup(null),
+    //   process: new FormGroup(null),
+    //   prompt: new FormGroup(null),
+    //   prompt2: new FormGroup(null)
+    //
+    // });
   }
 
   //   this.stageForm = new FormGroup<IProcess>()
@@ -92,7 +92,7 @@ export class ProcessComponent implements OnInit {
     document.querySelector('.showRadioField').appendChild(row);
   }
 
-  savePrompt(createPrompt: FormGroup) {
+  savePrompt(createPrompt: NgForm) {
     console.log("saving")
     console.log(createPrompt)
     this.promptService.createPrompt(
@@ -109,8 +109,8 @@ export class ProcessComponent implements OnInit {
     
     <div>
     <div>
-    <span> Prompt Multiple text #1: </span>
-    <input type="text">
+    <span class="input-group-text" id="basic-addon02"> Prompt Multiple text #1: </span>
+    <input ngModel name="prompt" class="form-control" aria-label="prompt" type="text">
     </div>
     
     <input type="radio">
@@ -119,8 +119,8 @@ export class ProcessComponent implements OnInit {
     
     <div>
     <div>
-    <span> Prompt Multiple text #2: </span>
-    <input type="text">
+    <span class="input-group-text" id="basic-addon01"> Prompt Multiple text #2: </span>
+    <input ngModel name="prompt" class="form-control" aria-label="prompt" type="text">
     </div>
     
     <input type="radio">
