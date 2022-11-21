@@ -61,8 +61,8 @@ export class HttpService {
 
     updatePrompt(updatePrompt: IPrompt){
       return this.httpClient.put(
-          "http://localhost:8080/api/prompt" + `${updatePrompt}`,
-          {
+          "http://localhost:8080/api/prompt/" + `${updatePrompt.id}`,
+          {     "id": updatePrompt.id,
                     "idOfTitle": updatePrompt.idOfTitle,
                     "process": updatePrompt.process,
                   "prompt": updatePrompt.prompt
