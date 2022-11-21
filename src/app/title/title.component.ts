@@ -45,6 +45,7 @@ export class TitleComponent implements OnInit {
     this.processService.$isCreatingTitle.next(false);
 
 
+
   }
 
     createStage(newStage: NgForm) {

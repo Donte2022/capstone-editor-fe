@@ -43,5 +43,11 @@ export class ResultsComponent implements OnInit {
     this.processService.$isViewingMain.next(true);
     this.processService.$isCreatingStage.next(false);
     this.processService.$isCreatingTitle.next(false);
+    this.processService.$isManagingProcess.next(false);
+    this.processService.$isReviewing.next(false);
+    this.processService.$isUpdatingPrompt.next(false);
+
+
+
   }
 }

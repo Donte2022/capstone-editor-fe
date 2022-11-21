@@ -55,6 +55,8 @@ export class UpdatePromptComponent implements OnInit {
     this.processService.$isCreatingStage.next(false);
     this.processService.$isCreatingTitle.next(false);
     this.processService.$isManagingProcess.next(true);
+    this.processService.$isUpdatingPrompt.next(false);
+    this.processService.$isReviewing.next(false);
   }
 
   submitUpdatedProcess(updatedProcessData: IPrompt) {
@@ -66,6 +68,10 @@ export class UpdatePromptComponent implements OnInit {
     this.processService.$isCreatingStage.next(false);
     this.processService.$isCreatingTitle.next(false);
     this.processService.$isManagingProcess.next(true);
+    this.processService.$isReviewing.next(false);
+    this.processService.$isUpdatingPrompt.next(false);
+
+
     this.promptService.updatePrompt(updatedProcessData);
   }
 }

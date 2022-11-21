@@ -109,4 +109,15 @@ export class PromptComponent implements OnInit {
     this.promptService.oldPromptData(promptInfo);
 
   }
+
+  mainMenu() {
+    this.processService.$isCreatingProcess.next(false);
+    this.processService.$isUpdating.next(false);
+    this.processService.$isViewingMain.next(true);
+    this.processService.$isCreatingStage.next(false);
+    this.processService.$isCreatingTitle.next(false);
+    this.processService.$isUpdatingPrompt.next(false);
+    this.processService.$isReviewing.next(false);
+    this.processService.$isManagingProcess.next(false);
+  }
 }

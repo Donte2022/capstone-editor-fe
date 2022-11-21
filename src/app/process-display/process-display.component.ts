@@ -55,7 +55,7 @@ export class ProcessDisplayComponent implements OnInit {
     this.processService.$isCreatingStage.next(false);
     this.processService.$isCreatingTitle.next(false);
     this.processService.$isReviewing.next(true);
-
+    this.processService.$isUpdatingPrompt.next(false);
   }
 
   manageProcess() {
@@ -66,17 +66,23 @@ export class ProcessDisplayComponent implements OnInit {
     this.processService.$isCreatingStage.next(false);
     this.processService.$isCreatingTitle.next(false);
     this.processService.$isManagingProcess.next(true);
+    this.processService.$isUpdatingPrompt.next(false);
+    this.processService.$isReviewing.next(false);
 
 
   }
 
   editStage(displayInfo: IProcess) {
     this.processService.$isCreatingProcess.next(false);
-    this.processService.$isUpdating.next(false);
+    // this.processService.$isUpdating.next(false);
     this.processService.$isViewingMain.next(false);
     this.processService.$isCreatingStage.next(false);
     this.processService.$isCreatingTitle.next(false);
     this.processService.$isUpdating.next(true);
+    this.processService.$isUpdatingPrompt.next(false);
+    this.processService.$isReviewing.next(false);
+    this.processService.$isManagingProcess.next(false);
+
     // @ts-ignore
     this.processService.updateThisStage(displayInfo);
     console.log(displayInfo)

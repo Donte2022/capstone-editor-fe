@@ -53,9 +53,10 @@
         </div>
 
     <div>
-        <button (click)="deletePrompt(promptInfo.id)">Delete</button>
-        <button (click)="updatePrompt(promptInfo)">Update</button>
+        <button class="btn btn-danger" (click)="deletePrompt(promptInfo.id) ">Delete</button>
+        <button class="btn btn-success" (click)="updatePrompt(promptInfo)">Update</button>
     </div> </div>
+<br><br>
 <div>
-    <app-process></app-process>
+    <button class="btn btn-primary" (click)="mainMenu()" >Main</button>
 </div>

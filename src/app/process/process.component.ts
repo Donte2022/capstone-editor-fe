@@ -63,10 +63,12 @@ export class ProcessComponent implements OnInit {
     console.log("going back to process management page")
     this.processService.$isCreatingProcess.next(false);
     this.processService.$isUpdating.next(false);
-    this.processService.$isViewingMain.next(true);
+    this.processService.$isViewingMain.next(false);
     this.processService.$isCreatingStage.next(false);
     this.processService.$isCreatingTitle.next(false);
     this.processService.$isManagingProcess.next(true);
+    this.processService.$isReviewing.next(false);
+    this.processService.$isUpdatingPrompt.next(false);
 
   }
 

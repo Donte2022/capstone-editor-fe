@@ -44,33 +44,6 @@ export class PromptService {
     })
   }
 
-  // newStage: string = "";
-  //
-  // updateThisPrompt(displayInfo: any) {
-  //   console.log(displayInfo)
-  //   this.newStage = displayInfo;
-  // }
-  //
-  // constructor(private httpService: HttpService) {
-  // }
-  //
-
-  //
-  // deleteStage(id: number) {
-  //
-  //   this.httpService.deleteSelectedStage(id)
-  //       .pipe(first()).subscribe({
-  //     next: (deleteThisStageSuccess) => {
-  //       console.log(id)
-  //       this.$deleteThisStageSuccess.next(this.deleteIdSuccess)
-  //     },
-  //     error: (deleteThisStageError) => {
-  //       console.log(deleteThisStageError)
-  //       this.$deleteThisStageError.next(this.deleteStageFail)
-  //     }
-  //   })
-  // }
-  //
 
   updatePrompt(updateThisPrompt: IPrompt) {
     this.httpService.updatePrompt(updateThisPrompt)
