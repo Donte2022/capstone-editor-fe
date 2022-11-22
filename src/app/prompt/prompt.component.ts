@@ -22,12 +22,12 @@ export class PromptComponent implements OnInit {
   updatePromptErrorMessage: string | null = null;
   updatePromptSuccessMessage: string | null = null;
 
-  updatedPrompt = {
-
-    id: "",
-    idOfTitle: "",
-    process: "",
-    prompt: "" };
+  // updatedPrompt = {
+  //
+  //   id: "",
+  //   idOfTitle: "",
+  //   process: "",
+  //   prompt: "" };
 
 
   onDestroy = new Subject();
@@ -37,7 +37,6 @@ export class PromptComponent implements OnInit {
               private promptService: PromptService,
               private processService: ProcessService) {
 
-    // this.updatedPrompt = this.promptService.editPrompt;
 
     this.promptService.$deleteThisStageError.pipe(takeUntil(this.onDestroy)).subscribe(
         deletePromptErrorMessage => this.deletePromptErrorMessage = deletePromptErrorMessage);
@@ -84,7 +83,6 @@ export class PromptComponent implements OnInit {
   }
 
   deletePrompt(id: number) {
-    console.log("deleting this prompt with id")
     console.log(id)
     this.promptService.deletePrompt(id);
 
@@ -104,8 +102,6 @@ export class PromptComponent implements OnInit {
     this.processService.$isUpdatingPrompt.next(true);
     this.processService.$isReviewing.next(false);
     this.processService.$isManagingProcess.next(false);
-    console.log("updating selected prompt")
-    // this.promptService.updatePrompt(promptInfo);
     this.promptService.oldPromptData(promptInfo);
 
   }
