@@ -13,23 +13,6 @@ export class NewStageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // addProcess() {
-  //   console.log("adding process")
-  //   this.processService.$isCreatingProcess.next(true);
-  //   this.processService.$isUpdating.next(false);
-  //   this.processService.$isViewingMain.next(false);
-  //   this.processService.$isCreatingStage.next(false);
-  //   this.processService.$isCreatingTitle.next(false);
-  // }
-
-  // editStage() {
-  //   this.processService.$isCreatingProcess.next(false);
-  //   this.processService.$isUpdating.next(false);
-  //   this.processService.$isViewingMain.next(false);
-  //   this.processService.$isCreatingStage.next(false);
-  //   this.processService.$isCreatingTitle.next(true);
-  //
-  // }
 
   deleteStage() {
 

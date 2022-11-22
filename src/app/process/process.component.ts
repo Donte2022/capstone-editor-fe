@@ -30,20 +30,10 @@ export class ProcessComponent implements OnInit {
               private promptService: PromptService) { }
 
   ngOnInit(): void {
-    // this.stageForm = new FormGroup({
-    //   stageTitle: new FormGroup(null),
-    //   startDate: new FormGroup(null),
-    //   endDate: new FormGroup(null),
-    //   description: new FormGroup(null),
-    //   process: new FormGroup(null),
-    //   prompt: new FormGroup(null),
-    //   prompt2: new FormGroup(null)
-    //
-    // });
+ 
   }
 
-  //   this.stageForm = new FormGroup<IProcess>()
-  // }
+  
   prompt: String ="";
   prompt2: String ="";
   prompt3: String ="";
@@ -159,11 +149,5 @@ export class ProcessComponent implements OnInit {
     console.log("deleting something")
 
   }
-
-  // updateProcess() {
-  //   console.log("updating prompt")
-  //   console.log(updateThisPropmt)
-  //   this.
-  //
-  // }
+  
 }

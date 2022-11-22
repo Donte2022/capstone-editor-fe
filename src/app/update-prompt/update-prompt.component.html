@@ -3,10 +3,7 @@
 <form #updatedPrompt="ngForm" (ngSubmit)="submitUpdatedProcess(updatedPrompt.value)">
 <div *ngFor=" let displayInfo of latestStageList">
     <br>
-<!--    <div><b> ID: </b> {{displayInfo}}</div>-->
-<!--    <br>-->
-<!--    <div><b> Title ID: </b> {{displayInfo.}}</div>-->
-<!--    <br>-->
+
     <div><b> Stage Title: </b> {{displayInfo.stageTitle}}</div>
     <br><br>
 </div>

@@ -31,27 +31,21 @@
 
             <div><b> Description: </b>{{displayInfo.description}} </div>
 
-
-            <!--            <div><b> Prompt: </b>{{displayInfo.prompt | date}} </div>-->
-
         </div>
     </div>
     <br><br>
     <div *ngFor="let promptInfo of latestPromptList">
         <div>
 
-
         <div><b> ID: </b>{{promptInfo.id}}</div>
 
             <div><b> Process Title: </b>{{promptInfo.idOfTitle}} </div>
-
 
             <div><b> Process Title: </b>{{promptInfo.process}} </div>
 
         <div><b> Prompt: </b>{{promptInfo.prompt}} </div>
 
         </div>
-
     <div>
         <button class="btn btn-danger" (click)="deletePrompt(promptInfo.id) ">Delete</button>
         <button class="btn btn-success" (click)="updatePrompt(promptInfo)">Update</button>

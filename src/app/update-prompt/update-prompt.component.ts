@@ -5,6 +5,7 @@ import {PromptService} from "../prompt.service";
 import {IStage} from "../interfaces/IStage";
 import {IProcess} from "../interfaces/IProcess";
 import {IPrompt} from "../interfaces/IPrompt";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-update-prompt',
@@ -14,6 +15,7 @@ import {IPrompt} from "../interfaces/IPrompt";
 export class UpdatePromptComponent implements OnInit {
 
   latestStageList!: IStage[];
+  oldProcessInfo!: IPrompt[];
 
   updatedStage = {
     id: "",
@@ -31,7 +33,6 @@ export class UpdatePromptComponent implements OnInit {
     prompt: ""
   };
 
-  oldProcessInfo!: IPrompt[];
 
   constructor(private processService: ProcessService,
               private promptService: PromptService) {
@@ -70,8 +71,6 @@ export class UpdatePromptComponent implements OnInit {
     this.processService.$isManagingProcess.next(true);
     this.processService.$isReviewing.next(false);
     this.processService.$isUpdatingPrompt.next(false);
-
-
     this.promptService.updatePrompt(updatedProcessData);
   }
 }

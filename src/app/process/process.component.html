@@ -6,15 +6,7 @@
         <h3>Create a Process</h3>
         <form #stageForm="ngForm"  (ngSubmit)="savePrompt(stageForm)">
 
-<!--            {{createPrompt| json}}-->
-
             <div><h4>Stage Title: </h4> </div>
-<!--            {{something.title}}-->
-
-<!--            <div class="input-group mb-3">-->
-<!--                <span class="input-group-text" id="basic-addon1">Process Title: </span>-->
-<!--                <input ngModel name="Process" class="form-control" aria-label="Process">-->
-<!--            </div>-->
 
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon0">Title ID: </span>
@@ -27,19 +19,8 @@
             </div>
             <br>
             <div class="input-group mb-3" name="trueOrFalse">
-<!--                <span class="input-group-text" id="basic-addon2">Prompt Title: </span>-->
                 <br>
-<!--                <div>-->
-<!--                    <span class="input-group-text" id="basic-addon3"> Select Response type: </span>-->
-<!--                    <br>-->
-<!--                    <div class="showRadioField" ng-hide="radioBtn" name="radioBtn">-->
-<!--                        <button (click)="addRadio()"> True or False</button>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash;                <div class="showInputField" ng-hide="radioBtn" name="inputField">&ndash;&gt;-->
-<!--                    <div class="showMultiField" ng-hide="radioBtn" name="radioBtn">-->
-<!--                        <button (click)="addMultiple()">Multiple Choice</button>-->
-<!--                    </div>-->
-<!--                </div>-->
+
                 <br>
                 <div >
                 <div>
@@ -68,58 +49,15 @@
             </div>
             </div>
             <br><br>
-<!--            <div class="input-group mb-3" name="multipleQuestion">-->
-<!--                &lt;!&ndash;                <span class="input-group-text" id="basic-addon2">Prompt Title: </span>&ndash;&gt;-->
-<!--                <br>-->
-<!--                <div>-->
-<!--                    <span class="input-group-text" id="basic-addon7">Prompt text #1: </span>-->
-<!--                    <input formControlName="prompt" [(ngModel)]="prompt" class="form-control" aria-label="Prompt" type="text">-->
-<!--                    <div class="m-1">-->
-<!--                        <input type="radio" >{{prompt}}-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div>-->
 
-<!--                    <span class="input-group-text" id="basic-addon8">Prompt text #2: </span>-->
-<!--                    <input formControlName="prompt2" [(ngModel)]="prompt2" class="form-control" aria-label="Prompt" type="text">-->
-<!--                    <div class="m-1">-->
-<!--                        <input type="radio" >{{prompt}}-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div>-->
-<!--                    <span class="input-group-text" id="basic-addon9">Prompt text #3: </span>-->
-<!--                    <input formControlName="prompt" [(ngModel)]="prompt" class="form-control" aria-label="Prompt" type="text">-->
-<!--                    <div class="m-1">-->
-<!--                        <input type="radio" >{{prompt}}-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div>-->
-
-<!--                    <span class="input-group-text" id="basic-addon10">Prompt text #4: </span>-->
-<!--                    <input formControlName="prompt2" [(ngModel)]="prompt2" class="form-control" aria-label="Prompt" type="text">-->
-<!--                    <div class="m-1">-->
-<!--                        <input type="radio" >{{prompt}}-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
             <br>
-<!--            <div class="input-group mb-3">-->
-<!--                <span class="input-group-text" id="basic-addon2"> Select type: </span>-->
-<!--&lt;!&ndash;                <input ngModel name="Response" class="form-control" aria-label="Response" type="text">&ndash;&gt;-->
-<!--&lt;!&ndash;                <input type="radio"> Radio button&ndash;&gt;-->
-<!--&lt;!&ndash;                <input type="input"> Input Field&ndash;&gt;-->
-<!--&lt;!&ndash;                <input type="checkbox"> Checkbox&ndash;&gt;-->
-<!--&lt;!&ndash;                <textarea></textarea> Textarea&ndash;&gt;-->
+      <textarea></textarea>
 
             <br>
         </form>
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-<!--        <button (click)="CreateProcess()" class="btn btn-success">Back</button>-->
         <button (click)="Cancel()" class="btn btn-warning" type="button">Cancel</button>
-<!--        <button (click)="CreatePrompt()" class="btn btn-primary" type="button">Create new prompt</button>-->
-<!--        <button (click)="deleteProcess()" class="btn btn-danger" type="button">Delete Process</button>-->
-<!--        <button (click)="updateProcess()" class="btn btn-primary" type="button">Update Process</button>-->
         <button (click)="savePrompt(stageForm)">Save</button>
 
     </div>

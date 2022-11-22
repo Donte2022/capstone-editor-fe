@@ -5,6 +5,7 @@ import {IProcess} from "../interfaces/IProcess";
 import {IPrompt} from "../interfaces/IPrompt";
 import {ProcessService} from "../process.service";
 import {PromptService} from "../prompt.service";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-prompt',
@@ -14,21 +15,12 @@ import {PromptService} from "../prompt.service";
 export class PromptComponent implements OnInit {
 
   latestPromptList!: IPrompt[];
-
   latestStageList!: IProcess[];
 
   deletePromptErrorMessage: string | null = null;
   deletePromptSuccessMessage: string | null = null;
   updatePromptErrorMessage: string | null = null;
   updatePromptSuccessMessage: string | null = null;
-
-  // updatedPrompt = {
-  //
-  //   id: "",
-  //   idOfTitle: "",
-  //   process: "",
-  //   prompt: "" };
-
 
   onDestroy = new Subject();
 

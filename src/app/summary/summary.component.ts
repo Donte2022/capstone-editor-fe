@@ -14,17 +14,14 @@ export class SummaryComponent implements OnInit {
   }
 
     cancel() {
-    console.log("canceling Stage")
       this.processService.$isCreatingProcess.next(false);
       this.processService.$isUpdating.next(false);
       this.processService.$isViewingMain.next(true);
       this.processService.$isCreatingStage.next(false);
       this.processService.$isCreatingTitle.next(false);
-
     }
 
   submit() {
-    console.log("Submitting Stage")
     this.processService.$isCreatingProcess.next(false);
     this.processService.$isUpdating.next(false);
     this.processService.$isViewingMain.next(true);

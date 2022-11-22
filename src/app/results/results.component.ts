@@ -21,11 +21,8 @@ export class ResultsComponent implements OnInit {
     this.httpService.getCompletedStage()
         .pipe(first()).subscribe({
       next: (data) => {
-        console.log(data)
         // @ts-ignore
         this.completedStageList = data;
-        console.log(this.completedStageList)
-        console.log(data)
       },
       error: (err) => {
         console.log(err)
@@ -37,7 +34,6 @@ export class ResultsComponent implements OnInit {
   }
 
   mainMenu() {
-    console.log("Back to main")
     this.processService.$isCreatingProcess.next(false);
     this.processService.$isUpdating.next(false);
     this.processService.$isViewingMain.next(true);
@@ -46,8 +42,5 @@ export class ResultsComponent implements OnInit {
     this.processService.$isManagingProcess.next(false);
     this.processService.$isReviewing.next(false);
     this.processService.$isUpdatingPrompt.next(false);
-
-
-
   }
 }
