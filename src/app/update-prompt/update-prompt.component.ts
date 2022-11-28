@@ -30,7 +30,8 @@ export class UpdatePromptComponent implements OnInit {
     id: "",
     idOfTitle: "",
     process: "",
-    prompt: ""
+    prompt: "",
+    prompt2: ""
   };
 
 

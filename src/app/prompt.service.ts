@@ -83,6 +83,9 @@ export class PromptService {
         id: createPrompt.id,
         idOfTitle: createPrompt.idOfTitle,
         prompt: createPrompt.prompt,
+        prompt2: createPrompt.prompt2,
+        prompt3: createPrompt.prompt3,
+        prompt4: createPrompt.prompt4,
         process: createPrompt.process
       }
 

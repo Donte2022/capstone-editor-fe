@@ -36,6 +36,17 @@
                    />
         </label>
     </div>
+    <div class="input-group mb-4">
+        <label>
+            <span class="input-group-text" id="basic-addon3">Prompt #2 text: </span>
+            <input type="text"
+                   name="prompt2"
+                   class="form-control"
+                   [(ngModel)]="this.updatedProcess.prompt2"
+            />
+        </label>
+    </div>
+
     <div>
         <input type="radio">
         {{updatedProcess.prompt}}
