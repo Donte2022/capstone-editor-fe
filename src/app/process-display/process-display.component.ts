@@ -13,7 +13,7 @@ import {PromptService} from "../prompt.service";
 })
 export class ProcessDisplayComponent implements OnInit {
 
-  latestProcessList!: IProcess[];
+  latestProcessList: IProcess[] = [];
 
   constructor(private httpService: HttpService,
               private processService: ProcessService) {

@@ -108,4 +108,15 @@ export class PromptComponent implements OnInit {
     this.processService.$isReviewing.next(false);
     this.processService.$isManagingProcess.next(false);
   }
+
+    addPrompt() {
+      this.processService.$isCreatingProcess.next(true);
+      this.processService.$isUpdating.next(false);
+      this.processService.$isViewingMain.next(false);
+      this.processService.$isCreatingStage.next(false);
+      this.processService.$isCreatingTitle.next(false);
+      this.processService.$isUpdatingPrompt.next(false);
+      this.processService.$isReviewing.next(false);
+      this.processService.$isManagingProcess.next(false);
+    }
 }
