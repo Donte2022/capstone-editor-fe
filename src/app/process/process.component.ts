@@ -33,10 +33,13 @@ export class ProcessComponent implements OnInit {
  
   }
 
-  
-  prompt: String ="";
-  prompt2: String ="";
-  prompt3: String ="";
+  booleanPrompt: String = "";
+  booleanPrompt2: String = "";
+  multipleChoicePrompt: String ="";
+  multipleChoicePrompt2: String ="";
+  multipleChoicePrompt3: String ="";
+  multipleChoicePrompt4: String = "";
+
 
   CreatePrompt() {
     console.log("creating prompt")
@@ -92,7 +95,14 @@ export class ProcessComponent implements OnInit {
     console.log(createPrompt)
     this.promptService.createPrompt(
         createPrompt.value as IPrompt)
-
+    this.processService.$isCreatingProcess.next(false);
+    this.processService.$isUpdating.next(false);
+    this.processService.$isViewingMain.next(false);
+    this.processService.$isCreatingStage.next(false);
+    this.processService.$isCreatingTitle.next(false);
+    this.processService.$isUpdatingPrompt.next(false);
+    this.processService.$isReviewing.next(false);
+    this.processService.$isManagingProcess.next(true);
   }
 
   addMultiple() {

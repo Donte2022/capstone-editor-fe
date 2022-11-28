@@ -11,12 +11,21 @@ export class PromptService {
 
   $deleteThisStageSuccess = new BehaviorSubject<string | null>(null);
   private deleteStageSuccess = "Prompt deleted successfully"
+
   $deleteThisStageError = new BehaviorSubject<string | null>(null);
   private deleteStageFail = "Prompt fail to delete"
+
   $updateThisPromptSuccess = new BehaviorSubject<string | null>(null);
-  private updatePromptSuccess = "Prompt deleted successfully"
+  private updatePromptSuccess = "Prompt updated!"
+
   $updateThisPromptError = new BehaviorSubject<string | null>(null);
-  private updatePromptFail = "Prompt fail to delete"
+  private updatePromptFail = "Prompt fail to update"
+
+  $createThisPromptSuccess = new BehaviorSubject<string | null>(null);
+  private createPromptSuccessMessage = "Prompt created!"
+
+  $createThisPromptError = new BehaviorSubject<string | null>(null);
+  private createPromptErrorMessage = "Prompt fail to create"
 
   editPrompt: string = "";
 
@@ -82,11 +91,14 @@ export class PromptService {
 
           console.log("Prompt was Created!")
           console.log(newPrompt)
+          this.$createThisPromptSuccess.next(this.createPromptSuccessMessage)
         },
         error: (error) => {
 
           console.log("Fail to create Prompt!")
           console.log(error)
+          this.$createThisPromptError.next(this.createPromptErrorMessage)
+
         },
       });
     }

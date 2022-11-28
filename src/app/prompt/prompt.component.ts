@@ -21,6 +21,8 @@ export class PromptComponent implements OnInit {
   deletePromptSuccessMessage: string | null = null;
   updatePromptErrorMessage: string | null = null;
   updatePromptSuccessMessage: string | null = null;
+  createPromptErrorMessage: string | null = null;
+  createPromptSuccessMessage: string | null = null;
 
   onDestroy = new Subject();
 
@@ -41,6 +43,12 @@ export class PromptComponent implements OnInit {
 
     this.promptService.$updateThisPromptSuccess.pipe(takeUntil(this.onDestroy)).subscribe(
         updatePromptSuccessMessage => this.updatePromptSuccessMessage = updatePromptSuccessMessage);
+
+    this.promptService.$createThisPromptError.pipe(takeUntil(this.onDestroy)).subscribe(
+        createPromptErrorMessage => this.createPromptErrorMessage = createPromptErrorMessage);
+
+    this.promptService.$createThisPromptSuccess.pipe(takeUntil(this.onDestroy)).subscribe(
+        createPromptSuccessMessage => this.createPromptSuccessMessage = createPromptSuccessMessage);
 
 
 
