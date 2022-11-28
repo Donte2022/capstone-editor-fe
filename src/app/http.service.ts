@@ -65,7 +65,10 @@ export class HttpService {
           {     "id": updatePrompt.id,
                     "idOfTitle": updatePrompt.idOfTitle,
                     "process": updatePrompt.process,
-                  "prompt": updatePrompt.prompt
+                  "prompt": updatePrompt.prompt,
+              "prompt2": updatePrompt.prompt2,
+              "prompt3": updatePrompt.prompt3,
+              "prompt4": updatePrompt.prompt4
           }
       ) as Observable<IPrompt>
     }
