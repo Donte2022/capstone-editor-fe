@@ -54,16 +54,21 @@ export class ProcessComponent implements OnInit {
 
   }
 
-
   toggleMultipleChoice() {
     console.log("showing Multiple choice")
     this.showMultiple = true;
     this.showTrueFalse = false;
+    this.multipleChoicePrompt = "";
+    this.multipleChoicePrompt2 = "";
+    this.multipleChoicePrompt3 = "";
+    this.multipleChoicePrompt4 = "";
   }
 
   toggleTrueFalse() {
     this.showTrueFalse = true;
     this.showMultiple = false;
+    this.booleanPrompt = "";
+    this.booleanPrompt2 = "";
   }
 
 
@@ -80,32 +85,6 @@ export class ProcessComponent implements OnInit {
     this.processService.$isUpdatingPrompt.next(false);
   }
 
-
-  // addRadio() {
-  //   let row = document.createElement("div");
-  //   row.className = "row";
-  //   row.innerHTML = `
-  //   <br>
-  //   <div>
-  //   <div>
-  //   <span> Prompt text #1: </span>
-  //   <input type="text">
-  //   </div>
-  //   <input type="radio">
-  //   </div>
-  //   <br>
-  //   <div>
-  //   <div>
-  //   <span> Prompt text #2: </span>
-  //   <input type="text">
-  //   </div>
-  //   <input type="radio">
-  //   </div>`;
-  //
-  //   // @ts-ignore
-  //   document.querySelector('.showRadioField').appendChild(row);
-  // }
-
   savePrompt(createPrompt: NgForm) {
     console.log("saving")
     console.log(createPrompt)
@@ -120,56 +99,6 @@ export class ProcessComponent implements OnInit {
     this.processService.$isReviewing.next(false);
     this.processService.$isManagingProcess.next(true);
   }
-
-  // addMultiple() {
-  //
-  //   let row = document.createElement("div");
-  //   row.className = "row";
-  //   row.innerHTML = `
-  //   <br>
-  //
-  //   <div>
-  //   <div>
-  //   <span class="input-group-text" id="basic-addon02"> Prompt Multiple text #1: </span>
-  //   <input ngModel name="prompt" class="form-control" aria-label="prompt" type="text">
-  //   </div>
-  //
-  //   <input type="radio">
-  //   </div>
-  //   <br>
-  //
-  //   <div>
-  //   <div>
-  //   <span class="input-group-text" id="basic-addon01"> Prompt Multiple text #2: </span>
-  //   <input ngModel name="prompt" class="form-control" aria-label="prompt" type="text">
-  //   </div>
-  //
-  //   <input type="radio">
-  //   <div>
-  //   <br>
-  //
-  //   <div>
-  //   <div>
-  //   <span> Prompt Multiple text #3: </span>
-  //   <input type="text">
-  //   </div>
-  //
-  //   <input type="radio">
-  //   </div>
-  //   <br>
-  //
-  //   <div>
-  //   <div>
-  //   <span> Prompt Multiple text #4: </span>
-  //   <input type="text">
-  //   </div>
-  //
-  //   <input type="radio">
-  //   </div>
-  //   </div>`;
-  //   // @ts-ignore
-  //   document.querySelector('.showMultiField').appendChild(row);
-  // }
 
   deleteProcess() {
     console.log("deleting something")
