@@ -1,37 +1,38 @@
 <nav class="navbar navbar-light bg-primary bg-opacity-75">
-    <div class="input-group justify-content-end">
+    <div class="input-group justify-content-between">
+        <button (click)="mainMenu()" class="btn btn-success">Main</button>
         <button (click)="exitApp()" class="btn btn-success">Exit</button>
     </div>
 </nav>
 
 <!--<div class="position-absolute top-50 start-50 translate-middle">-->
     <div class="input-group m-3 justify-content-center">
-        <div>
+<!--        <div>-->
             <!--    <div class="d-grid gap-2 d-md-flex justify-content-md-center">-->
         <div class="m-3 input-group justify-content-center text-primary">
             <h3>Title</h3>
         </div>
         <form #newStage="ngForm" (ngSubmit)="createStage(newStage)">
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Stage Title: </span>
-                <input ngModel name="stageTitle" class="form-control" aria-label="title">
+                <span class="input-group-text text-success" id="basic-addon1">Stage Title: </span>
+                <input ngModel name="stageTitle" class="form-control text-primary" aria-label="title">
             </div>
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon2">Start Date: </span>
-                <input type="date" ngModel name="startDate" class="form-control" aria-label="startDate">
+                <span class="input-group-text text-success" id="basic-addon2">Start Date: </span>
+                <input type="date"  ngModel name="startDate" class="form-control text-primary" aria-label="startDate">
             </div>
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon3">End Date: </span>
-                <input type="date" ngModel name="endDate" class="form-control" aria-label="endDate">
+                <span class="input-group-text text-success" id="basic-addon3">End Date: </span>
+                <input type="date" ngModel name="endDate" class="form-control text-primary" aria-label="endDate">
             </div>
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon4">Description: </span>
-                <input type="textarea" ngModel name="description" class="form-control" aria-label="description">
+                <span class="input-group-text text-success" id="basic-addon4">Description: </span>
+                <input type="textarea" ngModel name="description" class="form-control text-primary" aria-label="description">
             </div>
             <div class="m-5 input-group justify-content-sm-between">
-            <button class=" btn-success" type="submit" stageTitle>Save</button>
-            <button (click)="cancel()" class="btn-success">Cancel</button>
+            <button class="  btn btn-success" type="submit" stageTitle>Save</button>
+            <button (click)="cancel()" class="btn btn-primary">Cancel</button>
         </div>
             </form>
-    </div>
+<!--    </div>-->
 </div>

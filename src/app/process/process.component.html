@@ -3,24 +3,23 @@
 
 <div class="position-absolute top-50 start-50 translate-middle">
     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-<!--        <h3>Create a Process</h3>-->
         <br><br>
         <form #stageForm="ngForm"  (ngSubmit)="savePrompt(stageForm)">
 
-            <div class="input-group mb-3 justify-content-center"><h3 class="text-primary">Create a Process </h3> </div>
+            <div class="input-group mb-3 justify-content-center"><h3 class="text-primary"> Create a Process </h3> </div>
             <br>
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Title ID: </span>
-                <input  ngModel name="idOfTitle" class="form-control" aria-label="idOfTitle" type="number">
+                <span class="input-group-text text-success" id="basic-addon1"> Title ID: </span>
+                <input  ngModel name="idOfTitle" class="form-control text-primary" aria-label="idOfTitle" type="number">
             </div>
             <br>
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon2">Process Title: </span>
-                <input  ngModel name="process" class="form-control" aria-label="process" type="text">
+                <span class="input-group-text text-success" id="basic-addon2"> Process Title: </span>
+                <input  ngModel name="process" class="form-control text-primary" aria-label="process" type="text">
             </div>
             <br>
             <div class="input-group justify-content-center">
-                <span class="input-group-text " id="basic-addon3" >Response Type:</span>
+                <span class="input-group-text text-success" id="basic-addon3" > Response Type:</span>
                 <div class="input-group justify-content-center m-4">
                 <button  type="button" class="btn btn-primary" (click)="toggleTrueFalse()">True or False</button>
                 <button type="button" class="btn btn-success" (click)="toggleMultipleChoice()">Multiple Choice</button>
@@ -32,14 +31,14 @@
                     <br>
             <div *ngIf="showTrueFalse">
                     <div>
-                        <span class="input-group-text text-primary" id="basic-addon4">True or False Prompt text #1: </span>
-                        <input name="prompt" ng-show="radioBtn" [(ngModel)]="booleanPrompt" class="form-control" aria-label="prompt" type="text">
+                        <span class="input-group-text text-primary" id="basic-addon4"> True or False Prompt text #1: </span>
+                        <input name="prompt" ng-show="radioBtn" [(ngModel)]="booleanPrompt" class="form-control text-success" aria-label="prompt" type="text">
                         <div class="m-1">
                         </div>
                     </div>
                     <div>
-                        <span class="input-group-text text-primary" id="basic-addon5">True or False Prompt text #2: </span>
-                        <input name="prompt2" ng-show="radioBtn" [(ngModel)]="booleanPrompt2" class="form-control" aria-label="prompt2" type="text">
+                        <span class="input-group-text text-primary" id="basic-addon5"> True or False Prompt text #2: </span>
+                        <input name="prompt2" ng-show="radioBtn" [(ngModel)]="booleanPrompt2" class="form-control text-success" aria-label="prompt2" type="text">
                         <div class="m-1">
                         </div>
                     </div>
@@ -47,26 +46,26 @@
             </div>
             <div *ngIf="showMultiple">
                 <div>
-                    <span class="input-group-text text-success" id="basic-addon7">Multiple Choice Prompt text #1: </span>
-                    <input name="prompt" ng-show="radioBtn" [(ngModel)]="multipleChoicePrompt" class="form-control" aria-label="Prompt1" type="text">
+                    <span class="input-group-text text-success" id="basic-addon7"> Multiple Choice Prompt text #1: </span>
+                    <input name="prompt" ng-show="radioBtn" [(ngModel)]="multipleChoicePrompt" class="form-control text-primary" aria-label="Prompt1" type="text">
                     <div class="m-1">
                     </div>
                 </div>
                 <div>
-                    <span class="input-group-text text-success" id="basic-addon8">Multiple Choice Prompt text #2: </span>
-                    <input name="prompt2" [(ngModel)]="multipleChoicePrompt2" class="form-control" aria-label="Prompt2" type="text">
+                    <span class="input-group-text text-success" id="basic-addon8"> Multiple Choice Prompt text #2: </span>
+                    <input name="prompt2" [(ngModel)]="multipleChoicePrompt2" class="form-control text-primary" aria-label="Prompt2" type="text">
                     <div class="m-1">
                     </div>
                 </div>
                 <div>
-                        <span class="input-group-text text-success" id="basic-addon9">Multiple Choice Prompt text #3: </span>
-                        <input name="prompt3" [(ngModel)]="multipleChoicePrompt3" class="form-control" aria-label="prompt3" type="text">
+                        <span class="input-group-text text-success" id="basic-addon9"> Multiple Choice Prompt text #3: </span>
+                        <input name="prompt3" [(ngModel)]="multipleChoicePrompt3" class="form-control text-primary" aria-label="prompt3" type="text">
                         <div class="m-1">
                         </div>
                 </div>
                 <div>
-                        <span class="input-group-text text-success" id="basic-addon10">Multiple Choice Prompt text #4: </span>
-                        <input name="prompt4" [(ngModel)]="multipleChoicePrompt4" class="form-control" aria-label="prompt4" type="text">
+                        <span class="input-group-text text-success" id="basic-addon10"> Multiple Choice Prompt text #4: </span>
+                        <input name="prompt4" [(ngModel)]="multipleChoicePrompt4" class="form-control text-primary" aria-label="prompt4" type="text">
                         <div class="m-1">
                         </div>
                 </div>
@@ -78,12 +77,9 @@
             <br>
             <br>
 <div class="input-group m-3">
-<!--    <div class="d-grid gap-2 d-md-flex justify-content-md-center">-->
         <button (click)="savePrompt(stageForm)" class="btn btn-success">Save</button>
         <button (click)="Cancel()" class="btn btn-primary" type="button">Cancel</button>
-
 </div>
-<!--</div>-->
 
 
 

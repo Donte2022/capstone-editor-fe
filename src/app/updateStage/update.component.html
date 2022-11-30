@@ -1,9 +1,20 @@
-<h3>Update Stage</h3>
+<nav class="navbar navbar-light bg-primary bg-opacity-75">
+    <div class="input-group m-3 justify-content-between">
+        <button class="btn btn-success opacity-100" (click)="mainMenu()" >Main</button>
+        <button class="btn btn-success opacity-100" (click)="exitApp()" >Exit</button>
+    </div>
+</nav>
 
+
+<div class="input-group justify-content-center">
+    <h3 class="text-primary">Edit Stage</h3>
+</div>
+<div class="input-group justify-content-center">
+    <h3 class="text-primary">Title</h3>
+</div>
 
 <div class="position-absolute top-50 start-50 translate-middle">
     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-        <h3>Title</h3>
 
         <form #updatedStageData="ngForm" (ngSubmit)="submitUpdateStage(updatedStageData.value)">
 
@@ -12,26 +23,29 @@
             </div>
 
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Stage Title: </span>
-                <input type="text" [ngModel]="this.updatedStage.stageTitle" name="stageTitle"  class="form-control"  aria-label="StageTitle">
+                <span class="input-group-text text-success" id="basic-addon1">Stage Title: </span>
+                <input type="text" [ngModel]="this.updatedStage.stageTitle" name="stageTitle"  class="form-control text-primary"  aria-label="StageTitle">
             </div>
 
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon2">Start Date: </span>
-                <input type="date" [ngModel]="this.updatedStage.startDate"  name="startDate" class="form-control" aria-label="startDate">
+                <span class="input-group-text text-success" id="basic-addon2">Start Date: </span>
+                <input type="date" [ngModel]="this.updatedStage.startDate"  name="startDate" class="form-control text-primary" aria-label="startDate">
             </div>
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon3">End Date: </span>
-                <input type="date" [ngModel]="this.updatedStage.endDate" name="endDate" class="form-control" aria-label="endDate">
+                <span class="input-group-text text-success" id="basic-addon3">End Date: </span>
+                <input type="date" [ngModel]="this.updatedStage.endDate" name="endDate" class="form-control text-primary" aria-label="endDate">
             </div>
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon4">Description: </span>
-                <input type="textarea" [ngModel]="this.updatedStage.description" name="description" class="form-control" aria-label="description">
+                <span class="input-group-text text-success" id="basic-addon4">Description: </span>
+                <input type="textarea" [ngModel]="this.updatedStage.description" name="description" class="form-control text-primary" aria-label="description">
             </div>
-            <button type="submit" stageTitle>Save</button>
+            <br>
+            <div class="input-group justify-content-between m-3">
+                <button type="submit" stageTitle class="btn btn-success">Save</button>
+                <button (click)="cancel()" class="btn btn-primary">Cancel</button>
+            </div>
 
         </form>
 
-        <button (click)="cancel()">Cancel</button>
     </div>
 </div>

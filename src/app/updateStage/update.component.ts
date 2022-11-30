@@ -55,5 +55,25 @@ export class UpdateComponent implements OnInit {
         this.processService.updateStage(updatedStageData);
 
     }
+
+    mainMenu() {
+        this.processService.$isCreatingProcess.next(false);
+        this.processService.$isUpdating.next(false);
+        this.processService.$isViewingMain.next(true);
+        this.processService.$isCreatingStage.next(false);
+        this.processService.$isCreatingTitle.next(false);
+        this.processService.$isUpdatingPrompt.next(false);
+        this.processService.$isReviewing.next(false);
+        this.processService.$isManagingProcess.next(false);
+    }
+
+    exitApp() {
+        this.processService.$isCreatingProcess.next(false);
+        this.processService.$isUpdating.next(false);
+        this.processService.$isViewingMain.next(false);
+        this.processService.$isCreatingStage.next(false);
+        this.processService.$isCreatingTitle.next(false);
+        this.processService.$isReviewing.next(false);
+    }
 }
 
