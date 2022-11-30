@@ -1,5 +1,14 @@
-<h2>Updating prompt</h2>
+<nav class="navbar navbar-light bg-primary bg-opacity-75">
+    <div class="input-group m-3 justify-content-between">
+        <button class="btn btn-success opacity-100" (click)="mainMenu()" >Main</button>
+        <button class="btn btn-success opacity-100" (click)="exitApp()" >Exit</button>
+    </div>
+</nav>
 
+<div class="input-group justify-content-center">
+    <h2 class="text-primary">Updating prompt</h2>
+</div>
+<div class="input-group justify-content-center m-3">
 <form #updatedPrompt="ngForm" (ngSubmit)="submitUpdatedProcess(updatedPrompt.value)">
 <div *ngFor=" let displayInfo of latestStageList">
     <br>
@@ -10,73 +19,71 @@
 
 <div>
     <div class="input-group mb-0">
-        <input id="id" name="id" [ngModel]="this.updatedProcess.id" type="hidden" class="form-control">
+        <input id="id" name="id" [ngModel]="this.updatedProcess.id" [hidden]="true" class="form-control">
     </div>
     <div class="input-group mb-0">
-        <input id="idOfTitle" name="idOfTitle" [ngModel]="this.updatedProcess.idOfTitle" type="hidden" class="form-control">
+        <input id="idOfTitle" name="idOfTitle" [ngModel]="this.updatedProcess.idOfTitle" [hidden]="true" class="form-control">
     </div>
 
     <div class="input-group mb-3">
         <label>
-            <span class="input-group-text" id="basic-addon1">Process Title: </span>
+            <span class="input-group-text text-success" id="basic-addon1">Process Title: </span>
             <input type="text"
                    name="process"
-                   class="form-control"
+                   class="form-control text-primary"
             [(ngModel)]="updatedProcess.process">
         </label>
         </div>
         <br><br>
     <div class="input-group mb-3">
         <label>
-            <span class="input-group-text" id="basic-addon2">Prompt text: </span>
+            <span class="input-group-text text-success" id="basic-addon2">Prompt text: </span>
             <input type="text"
                    name="prompt"
-                   class="form-control"
+                   class="form-control text-primary"
                    [(ngModel)]="this.updatedProcess.prompt"
                    />
         </label>
     </div>
     <div class="input-group mb-4">
         <label>
-            <span class="input-group-text" id="basic-addon3">Prompt #2 text: </span>
+            <span class="input-group-text text-success" id="basic-addon3">Prompt #2 text: </span>
             <input type="text"
                    name="prompt2"
-                   class="form-control"
+                   class="form-control text-primary"
                    [(ngModel)]="this.updatedProcess.prompt2"
             />
         </label>
     </div>
     <div class="input-group mb-4">
         <label>
-            <span class="input-group-text" id="basic-addon4">Prompt #3 text: </span>
+            <span class="input-group-text text-success" id="basic-addon4">Prompt #3 text: </span>
             <input type="text"
                    name="prompt3"
-                   class="form-control"
+                   class="form-control text-primary"
                    [(ngModel)]="this.updatedProcess.prompt3"
             />
         </label>
     </div>
     <div class="input-group mb-4">
         <label>
-            <span class="input-group-text" id="basic-addon5">Prompt #4 text: </span>
+            <span class="input-group-text text-success" id="basic-addon5">Prompt #4 text: </span>
             <input type="text"
                    name="prompt4"
-                   class="form-control"
+                   class="form-control text-primary"
                    [(ngModel)]="this.updatedProcess.prompt4"
             />
         </label>
     </div>
 
-    <div>
-        <input type="radio">
-        {{updatedProcess.prompt}}
-    </div>
+
 </div>
-    <div>
-    <button type="submit" >Save</button>
-    </div>
+<!--    <div>-->
+        <div class="input-group justify-content-between m-3">
+            <button class="btn btn-success" type="submit">Save</button>
+            <button class="btn btn-primary" (click)="onCancel()">Cancel</button>
+        </div>
 </form>
-<br><br>
-<div>
-    <button (click)="onCancel()">Cancel</button>
+<!--<br><br>-->
+
 </div>
