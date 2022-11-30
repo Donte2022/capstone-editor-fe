@@ -25,6 +25,7 @@ export class PromptComponent implements OnInit {
   createPromptSuccessMessage: string | null = null;
 
   onDestroy = new Subject();
+  stageID: number| undefined;
 
 
   constructor(private httpService: HttpService,

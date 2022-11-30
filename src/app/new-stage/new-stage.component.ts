@@ -17,4 +17,13 @@ export class NewStageComponent implements OnInit {
   deleteStage() {
 
   }
+
+    exitApp() {
+      this.processService.$isCreatingProcess.next(false);
+      this.processService.$isUpdating.next(false);
+      this.processService.$isViewingMain.next(false);
+      this.processService.$isCreatingStage.next(false);
+      this.processService.$isCreatingTitle.next(false);
+      this.processService.$isReviewing.next(false);
+    }
 }

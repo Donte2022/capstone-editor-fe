@@ -1,68 +1,79 @@
-<h2> Process Management</h2>
+<nav class="navbar navbar-light bg-primary bg-opacity-75">
+        <div class="input-group m-3 justify-content-end">
+            <button class="btn btn-success opacity-100" (click)="mainMenu()" >Main</button>
+        </div>
+</nav>
+
+<div class="input-group m-3 justify-content-center text-success"><h2> Process Management</h2></div>
 
 <div>
-    <div class="text-danger">
+    <div class="input-group m-3 justify-content-center text-danger">
         {{deletePromptErrorMessage}}
     </div>
 
-    <div class="text-success">
+    <div class="input-group m-3 justify-content-center text-success">
         {{deletePromptSuccessMessage}}
     </div>
-    <div class="text-danger">
+    <div class="input-group m-3 justify-content-center text-danger">
         {{updatePromptErrorMessage}}
     </div>
 
-    <div class="text-success">
+    <div class="input-group m-3 justify-content-center text-success">
         {{updatePromptSuccessMessage}}
     </div>
 
-    <div class="text-danger">
+    <div class="input-group m-3 justify-content-center text-danger">
         {{createPromptErrorMessage}}
     </div>
 
-    <div class="text-success">
+    <div class="input-group m-3 justify-content-center text-success">
         {{createPromptSuccessMessage}}
     </div>
 
 </div>
-    <br>
+    <br><br>
     <div *ngFor="let displayInfo of latestStageList">
-        <div>
+        <div class="m-3 text-primary">
 
-            <div><b> ID: </b>{{displayInfo.id}}</div>
+            <div [hidden]="true"><b class="text-success"> ID: </b>{{displayInfo.id}}</div>
 
-            <div><b> Stage Title: </b>{{displayInfo.stageTitle}} </div>
+            <div><b class="text-success"> Stage Title: </b>{{displayInfo.stageTitle}} </div>
 
-            <div><b> Start Date: </b>{{displayInfo.startDate | date}} </div>
+            <div><b class="text-success"> Start Date: </b>{{displayInfo.startDate | date}} </div>
 
-            <div><b> End Date: </b>{{displayInfo.endDate | date}} </div>
+            <div><b class="text-success"> End Date: </b>{{displayInfo.endDate | date}} </div>
 
-            <div><b> Description: </b>{{displayInfo.description}} </div>
+            <div><b class="text-success"> Description: </b>{{displayInfo.description}} </div>
 
         </div>
     </div>
     <br><br>
     <div *ngFor="let promptInfo of latestPromptList">
-        <div>
+        <div class="m-3 text-primary">
 
-        <div><b> ID: </b>{{promptInfo.id}}</div>
+        <div [hidden]="true"><b class="text-success"> ID: </b>{{promptInfo.id}}</div>
 
-            <div><b> Stage ID: </b>{{promptInfo.idOfTitle}} </div>
+            <div [hidden]="true"><b class="text-success"> Stage ID: </b>{{promptInfo.idOfTitle}} </div>
 
-            <div><b> Process Title: </b>{{promptInfo.process}} </div>
-
-            <div><b> Prompt #1: </b>{{promptInfo.prompt}} </div>
-            <div><b> Prompt #2: </b>{{promptInfo.prompt2}} </div>
-            <div><b> Prompt #3: </b>{{promptInfo.prompt3}} </div>
-            <div><b> Prompt #4: </b>{{promptInfo.prompt4}} </div>
+            <div><b class="text-success"> Process Title: </b>{{promptInfo.process}} </div>
+            <div><b class="text-success"> Prompts: </b></div>
+            <div><b class="text-success"> </b>{{promptInfo.prompt}} </div>
+            <div><b class="text-success"> </b>{{promptInfo.prompt2}} </div>
+            <div><b class="text-success"> </b>{{promptInfo.prompt3}} </div>
+            <div><b class="text-success"> </b>{{promptInfo.prompt4}} </div>
 
         </div>
-    <div>
-        <button class="btn btn-danger" (click)="deletePrompt(promptInfo.id) ">Delete</button>
-        <button class="btn btn-success" (click)="updatePrompt(promptInfo)">Update</button>
-    </div> </div>
+    <div class="m-3">
+        <div class="input-group justify-content-around">
+        <button class="btn btn-primary opacity-100" (click)="deletePrompt(promptInfo.id) ">Delete</button>
+        <button class="btn btn-success opacity-100" (click)="updatePrompt(promptInfo)">Update</button>
+        </div>
+        </div>
+    </div>
 <br><br>
-<div>
-    <button class="btn btn-primary" (click)="addPrompt()">Add Prompt</button>
-    <button class="btn btn-secondary" (click)="mainMenu()" >Main</button>
+<div class="m-3">
+    <div class="input-group justify-content-md-center">
+    <button class="btn btn-primary opacity-100" (click)="addPrompt()">Add Prompt</button>
+    <button class="btn btn-success opacity-100" (click)="mainMenu()" >Main</button>
+    </div>
 </div>

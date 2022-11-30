@@ -7,8 +7,8 @@
         <br><br>
         <form #stageForm="ngForm"  (ngSubmit)="savePrompt(stageForm)">
 
-            <div class="input-group mb-3"><h3>Create a Process </h3> </div>
-            <br><br>
+            <div class="input-group mb-3 justify-content-center"><h3 class="text-primary">Create a Process </h3> </div>
+            <br>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Title ID: </span>
                 <input  ngModel name="idOfTitle" class="form-control" aria-label="idOfTitle" type="number">
@@ -19,67 +19,55 @@
                 <input  ngModel name="process" class="form-control" aria-label="process" type="text">
             </div>
             <br>
-
-
-<!--            <div>-->
-<!--            </div>-->
-
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon3">Select Response Type:</span>
-<!--            </div>-->
-
-<!--                <div class="input-group mb-3" name="trueOrFalse">-->
-                <button  type="button" class="btn btn-outline-primary" (click)="toggleTrueFalse()">True or False</button>
-<!--                <div class="input-group mb-3" name="multipleChoice">-->
-                <button type="button" class="btn btn-outline-primary" (click)="toggleMultipleChoice()">Multiple Choice</button>
-<!--            </div>-->
+            <div class="input-group justify-content-center">
+                <span class="input-group-text " id="basic-addon3" >Response Type:</span>
+                <div class="input-group justify-content-center m-4">
+                <button  type="button" class="btn btn-primary" (click)="toggleTrueFalse()">True or False</button>
+                <button type="button" class="btn btn-success" (click)="toggleMultipleChoice()">Multiple Choice</button>
+                </div>
+                    <div>
+                </div>
             </div>
                     <br>
                     <br>
             <div *ngIf="showTrueFalse">
                     <div>
-                        <span class="input-group-text" id="basic-addon4">True or False Prompt text #1: </span>
+                        <span class="input-group-text text-primary" id="basic-addon4">True or False Prompt text #1: </span>
                         <input name="prompt" ng-show="radioBtn" [(ngModel)]="booleanPrompt" class="form-control" aria-label="prompt" type="text">
                         <div class="m-1">
-                            <input type="radio" >{{booleanPrompt}}
                         </div>
                     </div>
                     <div>
-                        <span class="input-group-text" id="basic-addon5">True or False Prompt text #2: </span>
+                        <span class="input-group-text text-primary" id="basic-addon5">True or False Prompt text #2: </span>
                         <input name="prompt2" ng-show="radioBtn" [(ngModel)]="booleanPrompt2" class="form-control" aria-label="prompt2" type="text">
                         <div class="m-1">
-                            <input type="radio" >{{booleanPrompt2}}
                         </div>
                     </div>
                     <br>
             </div>
             <div *ngIf="showMultiple">
                 <div>
-                    <span class="input-group-text" id="basic-addon7">Multiple Choice Prompt text #1: </span>
+                    <span class="input-group-text text-success" id="basic-addon7">Multiple Choice Prompt text #1: </span>
                     <input name="prompt" ng-show="radioBtn" [(ngModel)]="multipleChoicePrompt" class="form-control" aria-label="Prompt1" type="text">
                     <div class="m-1">
-                        <input type="radio" >{{multipleChoicePrompt}}
                     </div>
                 </div>
                 <div>
-                    <span class="input-group-text" id="basic-addon8">Multiple Choice Prompt text #2: </span>
+                    <span class="input-group-text text-success" id="basic-addon8">Multiple Choice Prompt text #2: </span>
                     <input name="prompt2" [(ngModel)]="multipleChoicePrompt2" class="form-control" aria-label="Prompt2" type="text">
                     <div class="m-1">
-                        <input type="radio" >{{multipleChoicePrompt2}}
                     </div>
                 </div>
                 <div>
-                        <span class="input-group-text" id="basic-addon9">Multiple Choice Prompt text #3: </span>
+                        <span class="input-group-text text-success" id="basic-addon9">Multiple Choice Prompt text #3: </span>
                         <input name="prompt3" [(ngModel)]="multipleChoicePrompt3" class="form-control" aria-label="prompt3" type="text">
                         <div class="m-1">
-                            <input type="radio" >{{multipleChoicePrompt3}}
                         </div>
                 </div>
                 <div>
-                        <span class="input-group-text" id="basic-addon10">Multiple Choice Prompt text #4: </span>
+                        <span class="input-group-text text-success" id="basic-addon10">Multiple Choice Prompt text #4: </span>
                         <input name="prompt4" [(ngModel)]="multipleChoicePrompt4" class="form-control" aria-label="prompt4" type="text">
                         <div class="m-1">
-                            <input type="radio" >{{multipleChoicePrompt4}}
                         </div>
                 </div>
             </div>
@@ -89,13 +77,12 @@
             <br><br>
             <br>
             <br>
-<!--        </form>-->
-<!--    </div>-->
-    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+<div class="input-group m-3">
+<!--    <div class="d-grid gap-2 d-md-flex justify-content-md-center">-->
         <button (click)="savePrompt(stageForm)" class="btn btn-success">Save</button>
-        <button (click)="Cancel()" class="btn btn-warning" type="button">Cancel</button>
+        <button (click)="Cancel()" class="btn btn-primary" type="button">Cancel</button>
 
-    </div>
+</div>
 <!--</div>-->
 
 

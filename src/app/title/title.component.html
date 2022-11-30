@@ -1,7 +1,16 @@
+<nav class="navbar navbar-light bg-primary bg-opacity-75">
+    <div class="input-group justify-content-end">
+        <button (click)="exitApp()" class="btn btn-success">Exit</button>
+    </div>
+</nav>
 
-<div class="position-absolute top-50 start-50 translate-middle">
-    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-        <h3>Title</h3>
+<!--<div class="position-absolute top-50 start-50 translate-middle">-->
+    <div class="input-group m-3 justify-content-center">
+        <div>
+            <!--    <div class="d-grid gap-2 d-md-flex justify-content-md-center">-->
+        <div class="m-3 input-group justify-content-center text-primary">
+            <h3>Title</h3>
+        </div>
         <form #newStage="ngForm" (ngSubmit)="createStage(newStage)">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Stage Title: </span>
@@ -19,11 +28,10 @@
                 <span class="input-group-text" id="basic-addon4">Description: </span>
                 <input type="textarea" ngModel name="description" class="form-control" aria-label="description">
             </div>
-            <button type="submit" stageTitle>Save</button>
-
-    </form>
-<!--        <button (click)="generateStage(newStage.value)">Add Process</button>-->
-        <button (click)="cancel()">Cancel</button>
-
+            <div class="m-5 input-group justify-content-sm-between">
+            <button class=" btn-success" type="submit" stageTitle>Save</button>
+            <button (click)="cancel()" class="btn-success">Cancel</button>
+        </div>
+            </form>
     </div>
 </div>
